@@ -6,7 +6,7 @@ const Theme = () => {
   const [theme, setTheme] = useState(() => {
     const savedTheme = localStorage.getItem("theme");
     const prefersDark = window.matchMedia(
-      "(prefers-color-scheme: dark)",
+      "(prefers-color-scheme: dark)"
     ).matches;
 
     if (savedTheme === "light" || savedTheme === "dark") {
@@ -39,9 +39,10 @@ const Theme = () => {
   };
 
   return (
-    <div className="absolute top-4 right-4 flex items-center justify-center gap-2 rounded-full bg-transparent px-4 py-2 shadow-(--BOX-SHADOW-THEME) motion-safe:transition-shadow motion-safe:duration-300 motion-safe:ease-in-out md:top-13 md:right-13">
-      <ThemeIcon theme={theme} />
-      <ThemeButton onThemeChange={handleThemeChange} theme={theme} />
+    <div className="flex max-w-12.5 items-center justify-center rounded-xl bg-(--COLOR-BUTTON-PRIMARY) py-3.25">
+      <ThemeButton onThemeChange={handleThemeChange} theme={theme}>
+        <ThemeIcon theme={theme} />
+      </ThemeButton>
     </div>
   );
 };
