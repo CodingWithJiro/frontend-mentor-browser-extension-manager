@@ -1,6 +1,7 @@
 .dark {
   /* BACKGROUND-COLOR */
   --COLOR-BG-PAGE: var(--NEUTRAL-900);
+  --COLOR-BUTTON-PRIMARY: var(--NEUTRAL-700);
 
   /* FONT-COLOR */
   --COLOR-TEXT-PRIMARY: var(--NEUTRAL-0);
