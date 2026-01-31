@@ -1,7 +1,9 @@
+import SkipLink from "./components/SkipLink";
+
 function App() {
   return (
     <>
-      <div></div>
+      <SkipLink />
     </>
   );
 }
