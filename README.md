@@ -128,9 +128,9 @@ INSERT LIST OF WHAT I LEARNED MAKING THIS PROJECT
 
 Created by **Elmar Chavez**
 
-Month/Year: **January 2025**
+Month/Year: **January - February 2025**
 
-Journey: **10<sup>th</sup>** month of learning _frontend web development_.
+Journey: **10<sup>th</sup> - 11<sup>th</sup>** month of learning _frontend development_.
 
 <!--
 
