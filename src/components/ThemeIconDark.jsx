@@ -1,17 +1,21 @@
 const ThemeIconDark = () => {
   return (
     <svg
-      viewBox="0 0 24 24"
-      fill="none"
       xmlns="http://www.w3.org/2000/svg"
-      className="w-4.5 text-(--COLOR-THEME-ICON) opacity-100"
+      width="22"
+      height="22"
+      viewBox="0 0 22 22"
       aria-hidden="true"
       data-testid="theme-icon-dark"
     >
       <path
-        d="M9.272 2.406a1 1 0 0 0-1.23-1.355C6.59 1.535 5.432 2.487 4.37 3.55a11.399 11.399 0 0 0 0 16.182c4.518 4.519 11.51 4.261 15.976-.205 1.062-1.062 2.014-2.22 2.498-3.673A1 1 0 0 0 21.55 14.6c-3.59 1.322-7.675.734-10.434-2.025-2.765-2.766-3.328-6.83-1.844-10.168Z"
-        fill="currentColor"
-      ></path>
+        d="M11 1.833v1.834m0 14.666v1.834M3.667 11H1.833m3.955-5.212L4.492 4.492m11.72 1.296 1.297-1.296M5.788 16.215l-1.296 1.296m11.72-1.296 1.297 1.296M20.167 11h-1.834m-2.75 0a4.583 4.583 0 1 1-9.167 0 4.583 4.583 0 0 1 9.167 0Z"
+        stroke="#FBFDFE"
+        stroke-width="1.98"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        fill="none"
+      />
     </svg>
   );
 };
