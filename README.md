@@ -1,4 +1,4 @@
-# PROJECT TITLE
+# Browser Extension Manager
 
 [![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)](https://react.dev)
 [![Vite](https://img.shields.io/badge/Vite-646CFF?style=for-the-badge&logo=vite&logoColor=FFD62E)](https://vitejs.dev)
@@ -8,34 +8,27 @@
 ![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
 ![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)
 ![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)
-[![Visual Studio Code](https://img.shields.io/badge/VS%20Code-007ACC?style=for-the-badge&logo=visual-studio-code&logoColor=white)](https://code.visualstudio.com/)
+[![Frontend Mentor](https://img.shields.io/badge/Frontend%20Mentor-3e54a3?style=for-the-badge&logo=frontendmentor&logoColor=white)](https://www.frontendmentor.io/)
 [![Git](https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=git&logoColor=white)](https://git-scm.com/)
 [![GitHub](https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/)
 [![Netlify](https://img.shields.io/badge/Netlify-00C7B7?style=for-the-badge&logo=netlify&logoColor=white)](https://www.netlify.com/)
-[![Figma](https://img.shields.io/badge/Figma-ffffff?style=for-the-badge&logo=figma&logoColor=F24E1E)](https://www.figma.com/)
 [![PerfectPixel](https://img.shields.io/badge/PerfectPixel-F56C94?style=for-the-badge)](https://chrome.google.com/webstore/detail/perfectpixel-by-welldonecod/dkaagdgjmgdmbnecmcefdhjekcoceebi)
-[![Roadmap.sh](https://img.shields.io/badge/Roadmap.sh-333333?style=for-the-badge&logoColor=white)](https://roadmap.sh)
-[![W3Schools](https://img.shields.io/badge/W3Schools-3a9c42?style=for-the-badge&logo=w3schools&logoColor=white)](https://www.w3schools.com/)
-[![freeCodeCamp](https://img.shields.io/badge/freeCodeCamp-27273D?style=for-the-badge&logo=freecodecamp&logoColor=white)](https://www.freecodecamp.org/)
-[![Frontend Mentor](https://img.shields.io/badge/Frontend%20Mentor-3e54a3?style=for-the-badge&logo=frontendmentor&logoColor=white)](https://www.frontendmentor.io/)
-[![MDN Web Docs](https://img.shields.io/badge/MDN_Web_Docs-000000?style=for-the-badge&logo=mdnwebdocs&logoColor=white)](https://developer.mozilla.org/)
 ![Image → Code](https://img.shields.io/badge/Image%20→%20Code-6a1b9a?style=for-the-badge&labelColor=2e003e&logoColor=white)
 ![Semantic HTML](https://img.shields.io/badge/Semantic%20HTML-ff9800?style=for-the-badge)
-![Accessible](https://img.shields.io/badge/Accessibility-A11Y-0052cc?style=for-the-badge)
+![Accessible](https://img.shields.io/badge/Accessible-0052cc?style=for-the-badge)
 ![Responsive Design](https://img.shields.io/badge/Responsive%20Design-2196F3?style=for-the-badge&logo=responsive&logoColor=white)
 ![Mobile First](https://img.shields.io/badge/Mobile%20First-14532D?style=for-the-badge&logo=responsive&logoColor=white)
 ![Theme Toggle](https://img.shields.io/badge/Theme%20Toggle-121212?style=for-the-badge&logo=adjust&logoColor=white)
-[![Fetch API](https://img.shields.io/badge/NAME%20API-1976d2?style=for-the-badge)](API_LINK)
 ![Dynamic Content](https://img.shields.io/badge/Dynamic%20Content-673ab7?style=for-the-badge)
 [![Google Lighthouse](https://img.shields.io/badge/Lighthouse-00B0FF?style=for-the-badge&logo=lighthouse&logoColor=white)](/docs/downloads/lighthouse-performance-report.pdf)
 
-![Status](https://img.shields.io/badge/status-complete-brightgreen)
-![Learning Path](https://img.shields.io/badge/learning%20path-month%201-blue)
-![Views](https://visitor-badge.laobi.icu/badge?page_id=CodingWithJiro.REPO_NAME&left_text=repo%20views)
+![Status](https://img.shields.io/badge/status-incomplete-orange)
+![Learning Path](https://img.shields.io/badge/learning%20path-month%2010-blue)
+![Views](https://visitor-badge.laobi.icu/badge?page_id=CodingWithJiro.frontend-mentor-browser-extension-manager&left_text=repo%20views)
 
-## ADD PROJECT SUBTITLE
+## An Interactive Browser Extension Manager UI
 
-INSERT BRIEF ONE LINER DESCRIPTION
+A fully responsive browser extension manager interface featuring dynamic data rendering, state toggling, filtering, and theme selection.
 
 | _Mobile Preview (375x812)_                                  | _Desktop Preview (1440x960)_                                   |
 | ----------------------------------------------------------- | -------------------------------------------------------------- |
@@ -48,17 +41,7 @@ INSERT BRIEF ONE LINER DESCRIPTION
 
 INSERT PROJECT OVERVIEW (1-2 PARAGRAPHS)
 
-<!-- FOR FRONTEND MENTOR PROJECTS ONLY -->
-
 Created as part of the building challenges from **[Frontend Mentor](https://www.frontendmentor.io/)**.
-
-<!-- FOR FREECODECAMP LAB PROJECTS ONLY -->
-
-Created as part of the lab challenges from **[freeCodeCamp.org](https://www.freecodecamp.org/learn/full-stack-developer/)** JavaScript course.
-
-<!-- FOR WES BOS JAVASCRIPT30 PROJECTS -->
-
-This project is inspired from Wes Bos' free **[#JavaScript30 Course](https://javascript30.com/)**
 
 ---
 
@@ -98,9 +81,9 @@ INSERT LIST OF PROJECT FEATURES
 
 ## Development Workflow
 
-This project uses a **[feature-based branching workflow](https://github.com/CodingWithJiro/REPO_NAME/network)** with descriptive commits and **[structured pull requests](REPO_PULL_REQUEST_CLOSED_LINK)**, mirroring professional team collaboration practices:
+This project uses a **[feature-based branching workflow](https://github.com/CodingWithJiro/frontend-mentor-browser-extension-manager/network)** with descriptive commits and **[structured pull requests](https://github.com/CodingWithJiro/frontend-mentor-browser-extension-manager/pulls?q=is%3Apr+is%3Aclosed)**, mirroring professional team collaboration practices:
 
-[![Network Graph](/public/img/network-graph.png)](https://github.com/CodingWithJiro/REPO_NAME/network)
+[![Network Graph](/public/img/network-graph.png)](https://github.com/CodingWithJiro/frontend-mentor-browser-extension-manager/network)
 
 ---
 
@@ -117,8 +100,8 @@ A **Google Lighthouse** audit was conducted on the final version of this project
 Open a terminal and type:
 
 ```bash
-git clone https://github.com/CodingWithJiro/REPO_NAME.git
-cd REPO_NAME
+git clone https://github.com/CodingWithJiro/frontend-mentor-browser-extension-manager.git
+cd frontend-mentor-browser-extension-manager
 npm install
 npm run dev
 ```
@@ -145,33 +128,6 @@ INSERT LIST OF WHAT I LEARNED MAKING THIS PROJECT
 
 Created by **Elmar Chavez**
 
-Month/Year: **January 2025**
+Month/Year: **January - February 2025**
 
-Journey: **10<sup>th</sup>** month of learning _frontend web development_.
-
-<!--
-
-DATES:
-
-September 2025 = **6<sup>th</sup>**
-October 2025 = **7<sup>th</sup>**
-November 2025 = **8<sup>th</sup>**
-December 2025 = **9<sup>th</sup>**
-January 2026 = **10<sup>th</sup>**
-February 2026 = **11<sup>th</sup>**
-March 2026 = **12<sup>th</sup>**
-
-FRONTEND MENTOR TAGS:
-react vite tailwind html css javascript vscode git github netlify 5th-month frontend-mentor project perfectpixel lighthouse theme-toggle
-
-FREECODECAMP TAGS:
-react vite tailwind html css javascript vscode git github netlify 5th-month freecodecamp project lighthouse theme-toggle fcc-js api
-
-WES BOS JAVASCRIPT30 TAGS:
-react vite tailwind html css javascript vscode git github netlify 6th-month wes-bos javascript30 project lighthouse theme-toggle figma
-
-MERGE PULL REQUEST COMMENT SIMULATING PR APPROVAL FROM A TEAM:
-In a team setting, this PR would await senior developer approval.
-For this solo project, I’ll proceed with merging after review.
-
--->
+Journey: **10<sup>th</sup> - 11<sup>th</sup>** month of learning _frontend development_.
