@@ -100,8 +100,8 @@ A **Google Lighthouse** audit was conducted on the final version of this project
 Open a terminal and type:
 
 ```bash
-git clone https://github.com/CodingWithJiro/REPO_NAME.git
-cd REPO_NAME
+git clone https://github.com/CodingWithJiro/frontend-mentor-browser-extension-manager.git
+cd frontend-mentor-browser-extension-manager
 npm install
 npm run dev
 ```
