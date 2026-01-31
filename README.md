@@ -81,9 +81,9 @@ INSERT LIST OF PROJECT FEATURES
 
 ## Development Workflow
 
-This project uses a **[feature-based branching workflow](https://github.com/CodingWithJiro/REPO_NAME/network)** with descriptive commits and **[structured pull requests](REPO_PULL_REQUEST_CLOSED_LINK)**, mirroring professional team collaboration practices:
+This project uses a **[feature-based branching workflow](https://github.com/CodingWithJiro/frontend-mentor-browser-extension-manager/network)** with descriptive commits and **[structured pull requests](https://github.com/CodingWithJiro/frontend-mentor-browser-extension-manager/pulls?q=is%3Apr+is%3Aclosed)**, mirroring professional team collaboration practices:
 
-[![Network Graph](/public/img/network-graph.png)](https://github.com/CodingWithJiro/REPO_NAME/network)
+[![Network Graph](/public/img/network-graph.png)](https://github.com/CodingWithJiro/frontend-mentor-browser-extension-manager/network)
 
 ---
 
