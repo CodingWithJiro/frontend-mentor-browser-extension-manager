@@ -1,4 +1,4 @@
-# PROJECT TITLE
+# Browser Extension Manager
 
 [![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)](https://react.dev)
 [![Vite](https://img.shields.io/badge/Vite-646CFF?style=for-the-badge&logo=vite&logoColor=FFD62E)](https://vitejs.dev)
@@ -26,9 +26,9 @@
 ![Learning Path](https://img.shields.io/badge/learning%20path-month%2010-blue)
 ![Views](https://visitor-badge.laobi.icu/badge?page_id=CodingWithJiro.frontend-mentor-browser-extension-manager&left_text=repo%20views)
 
-## ADD PROJECT SUBTITLE
+## An Interactive Browser Extension Manager UI
 
-INSERT BRIEF ONE LINER DESCRIPTION
+A fully responsive browser extension manager interface featuring dynamic data rendering, state toggling, filtering, and theme selection.
 
 | _Mobile Preview (375x812)_                                  | _Desktop Preview (1440x960)_                                   |
 | ----------------------------------------------------------- | -------------------------------------------------------------- |
