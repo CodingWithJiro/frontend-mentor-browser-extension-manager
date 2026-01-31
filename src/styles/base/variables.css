@@ -17,11 +17,11 @@
   --RED-700: hsl(3, 77%, 44%);
 
   /* BACKGROUND-COLOR */
-  --COLOR-BG-PRIMARY: var(--NEUTRAL-0);
+  --COLOR-BG-PAGE: var(--NEUTRAL-0);
 
   /* FONT-COLOR */
   --COLOR-TEXT-PRIMARY: var(--NEUTRAL-900);
 
   /* GRADIENTS */
-  --GRADIENT-PRIMARY: linear-gradient(180deg, #ebf2fc 0%, #eef8f9 100%);
+  --GRADIENT-PAGE: linear-gradient(180deg, #ebf2fc 0%, #eef8f9 100%);
 }

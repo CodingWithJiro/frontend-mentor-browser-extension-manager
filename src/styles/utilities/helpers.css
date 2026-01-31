@@ -1,10 +1,10 @@
 .dark {
   /* BACKGROUND-COLOR */
-  --COLOR-BG-PRIMARY: var(--NEUTRAL-900);
+  --COLOR-BG-PAGE: var(--NEUTRAL-900);
 
   /* FONT-COLOR */
   --COLOR-TEXT-PRIMARY: var(--NEUTRAL-0);
 
   /* GRADIENTS */
-  --GRADIENT-PRIMARY: linear-gradient(180deg, #040918 0%, #091540 100%);
+  --GRADIENT-PAGE: linear-gradient(180deg, #040918 0%, #091540 100%);
 }
