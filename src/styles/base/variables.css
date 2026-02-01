@@ -1,22 +1,30 @@
-/** || VARIABLES */
-/* CHANGE THE DATA BELOW AS NEEDED */
 :root {
   /* FONTS */
-  --FF: "Arial", sans-serif;
+  --FF: "Noto Sans", sans-serif;
   --FS: 1rem;
 
   /* COLORS */
-  --FONT-COLOR: #000;
-  --BGCOLOR: #fff;
-  --BGCOLOR-THEME-BUTTON: #f1f1f1;
-  --BGCOLOR-THEME-BUTTON-AFTER: #333;
-  --COLOR-THEME-ICON: #333;
-  --BORDER-COLOR-THEME-BUTTON: #ccc;
-  --SHADOW-COLOR-THEME: rgba(0, 0, 0, 0.3);
+  --NEUTRAL-900: hsl(227, 75%, 14%);
+  --NEUTRAL-800: hsl(226, 25%, 17%);
+  --NEUTRAL-700: hsl(225, 23%, 24%);
+  --NEUTRAL-600: hsl(226, 11%, 37%);
+  --NEUTRAL-300: hsl(0, 0%, 78%);
+  --NEUTRAL-200: hsl(217, 61%, 90%);
+  --NEUTRAL-100: hsl(0, 0%, 93%);
+  --NEUTRAL-0: hsl(200, 60%, 99%);
+  --RED-400: hsl(3, 86%, 64%);
+  --RED-500: hsl(3, 71%, 56%);
+  --RED-700: hsl(3, 77%, 44%);
 
-  /* BORDERS */
-  --BORDER-THEME-BUTTON: 1px solid var(--BORDER-COLOR-THEME-BUTTON);
+  /* BACKGROUND-COLOR */
+  --COLOR-BG-PAGE: var(--NEUTRAL-0);
+  --COLOR-BUTTON-PRIMARY: var(--NEUTRAL-100);
+  --COLOR-BUTTON-PRIMARY-HOVER: var(--NEUTRAL-300);
+  --COLOR-BUTTON-PRIMARY-FOCUS: var(--RED-500);
 
-  /* SHADOWS */
-  --BOX-SHADOW-THEME: 0 0 3px var(--SHADOW-COLOR-THEME);
+  /* FONT-COLOR */
+  --COLOR-TEXT-PRIMARY: var(--NEUTRAL-900);
+
+  /* GRADIENTS */
+  --GRADIENT-PAGE: linear-gradient(180deg, #ebf2fc 0%, #eef8f9 100%);
 }
