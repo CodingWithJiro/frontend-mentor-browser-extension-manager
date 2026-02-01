@@ -39,7 +39,7 @@ const Theme = () => {
   };
 
   return (
-    <div className="flex max-w-12.5 items-center justify-center rounded-xl bg-(--COLOR-BUTTON-PRIMARY) py-3.25">
+    <div className="flex max-w-12.5 items-center justify-center rounded-xl bg-(--COLOR-BUTTON-PRIMARY)">
       <ThemeButton onThemeChange={handleThemeChange} theme={theme}>
         <ThemeIcon theme={theme} />
       </ThemeButton>

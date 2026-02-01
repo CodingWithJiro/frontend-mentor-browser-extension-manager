@@ -5,7 +5,7 @@ const ThemeButton = ({ onThemeChange, theme, children }) => {
 
   return (
     <button
-      className="relative flex h-full w-full cursor-pointer items-center justify-center"
+      className="relative flex h-full w-full cursor-pointer items-center justify-center py-3.25"
       type="button"
       aria-label={label}
       aria-pressed={isPressed}
