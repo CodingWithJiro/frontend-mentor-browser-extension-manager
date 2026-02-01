@@ -39,7 +39,7 @@ const Theme = () => {
   };
 
   return (
-    <div className="flex max-w-12.5 items-center justify-center rounded-xl bg-(--COLOR-BUTTON-PRIMARY)">
+    <div className="flex max-w-12.5 items-center justify-center rounded-xl bg-(--COLOR-BUTTON-PRIMARY) hover:bg-(--COLOR-BUTTON-PRIMARY-HOVER)">
       <ThemeButton onThemeChange={handleThemeChange} theme={theme}>
         <ThemeIcon theme={theme} />
       </ThemeButton>
