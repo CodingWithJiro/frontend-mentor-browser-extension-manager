@@ -5,7 +5,7 @@ const ThemeButton = ({ onThemeChange, theme, children }) => {
 
   return (
     <button
-      className="flex h-full w-full cursor-pointer items-center justify-center rounded-xl py-3.25 focus-visible:outline-2 focus-visible:outline-offset-3 focus-visible:outline-(--COLOR-BUTTON-PRIMARY-FOCUS)"
+      className="flex h-full w-full cursor-pointer items-center justify-center rounded-xl py-3.25 focus-visible:outline-2 focus-visible:outline-offset-3 focus-visible:outline-(--COLOR-BUTTON-PRIMARY-FOCUS) motion-safe:transition-colors motion-safe:duration-120 motion-safe:ease-in-out"
       type="button"
       aria-label={label}
       aria-pressed={isPressed}
