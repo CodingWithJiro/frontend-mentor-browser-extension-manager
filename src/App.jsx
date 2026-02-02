@@ -4,10 +4,12 @@ import MainLayout from "./components/MainLayout";
 
 function App() {
   return (
-    <MainLayout>
+    <>
       <SkipLink />
-      <Theme />
-    </MainLayout>
+      <MainLayout>
+        <Theme />
+      </MainLayout>
+    </>
   );
 }
 
