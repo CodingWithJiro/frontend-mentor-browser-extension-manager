@@ -18,13 +18,22 @@
 
   /* BACKGROUND-COLOR */
   --COLOR-BG-PAGE: var(--NEUTRAL-0);
+  --COLOR-BG-CARD-PRIMARY: var(--NEUTRAL-0);
   --COLOR-BUTTON-PRIMARY: var(--NEUTRAL-100);
   --COLOR-BUTTON-PRIMARY-HOVER: var(--NEUTRAL-300);
   --COLOR-BUTTON-PRIMARY-FOCUS: var(--RED-500);
+  --COLOR-BRAND: var(--RED-700);
+  --COLOR-SHADOW-PRIMARY: 216deg 23% 50%;
 
   /* FONT-COLOR */
   --COLOR-TEXT-PRIMARY: var(--NEUTRAL-900);
 
   /* GRADIENTS */
   --GRADIENT-PAGE: linear-gradient(180deg, #ebf2fc 0%, #eef8f9 100%);
+
+  /* SHADOWS */
+  --SHADOW-CARD-PRIMARY:
+    0px 1px 1.1px hsl(var(--COLOR-SHADOW-PRIMARY) / 0.34),
+    0px 1.7px 1.9px -1.2px hsl(var(--COLOR-SHADOW-PRIMARY) / 0.34),
+    0px 4px 4.5px -2.5px hsl(var(--COLOR-SHADOW-PRIMARY) / 0.34);
 }
