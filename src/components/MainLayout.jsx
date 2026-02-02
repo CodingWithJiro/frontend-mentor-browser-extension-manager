@@ -1,5 +1,5 @@
 const MainLayout = ({ children }) => {
-  return <div>{children}</div>;
+  return <div className="min-h-screen">{children}</div>;
 };
 
 export default MainLayout;

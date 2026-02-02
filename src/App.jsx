@@ -1,13 +1,13 @@
 import SkipLink from "./components/SkipLink";
-import Theme from "./components/Theme";
 import MainLayout from "./components/MainLayout";
+import Header from "./components/Header";
 
 function App() {
   return (
     <>
       <SkipLink />
       <MainLayout>
-        <Theme />
+        <Header />
       </MainLayout>
     </>
   );
