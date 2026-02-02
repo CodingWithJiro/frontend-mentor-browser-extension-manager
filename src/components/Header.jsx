@@ -3,7 +3,7 @@ import Theme from "./Theme";
 
 const Header = () => {
   return (
-    <header className="border border-red-700">
+    <header className="flex items-center justify-between border border-red-700 px-2.75 py-2">
       <CompanyTitle />
       <Theme />
     </header>
