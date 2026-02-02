@@ -1,8 +1,10 @@
+import CompanyTitle from "./CompanyTitle";
 import Theme from "./Theme";
 
 const Header = () => {
   return (
-    <header>
+    <header className="border border-red-700">
+      <CompanyTitle />
       <Theme />
     </header>
   );
