@@ -11,6 +11,7 @@
   --NEUTRAL-300: hsl(0, 0%, 78%);
   --NEUTRAL-200: hsl(217, 61%, 90%);
   --NEUTRAL-100: hsl(0, 0%, 93%);
+  --NEUTRAL-50: hsl(220deg 30% 96%);
   --NEUTRAL-0: hsl(200, 60%, 99%);
   --RED-400: hsl(3, 86%, 64%);
   --RED-500: hsl(3, 71%, 56%);
@@ -19,14 +20,27 @@
   /* BACKGROUND-COLOR */
   --COLOR-BG-PAGE: var(--NEUTRAL-0);
   --COLOR-BG-CARD-PRIMARY: var(--NEUTRAL-0);
+  --COLOR-BG-CARD-SECONDARY: var(--NEUTRAL-0);
+  --COLOR-BG-CARD-SECONDARY-ACTIVE: var(--RED-700);
+  --COLOR-BG-CARD-SECONDARY-HOVER: var(--NEUTRAL-50);
+  --COLOR-BG-CARD-SECONDARY-ACTIVE-EMPHASIS: var(--RED-500);
   --COLOR-BUTTON-PRIMARY: var(--NEUTRAL-100);
   --COLOR-BUTTON-PRIMARY-HOVER: var(--NEUTRAL-300);
-  --COLOR-BUTTON-PRIMARY-FOCUS: var(--RED-500);
   --COLOR-BRAND: var(--RED-700);
   --COLOR-SHADOW-PRIMARY: 216deg 23% 50%;
+  --COLOR-SHADOW-SECONDARY: 0deg 0% 100%;
+  --COLOR-SHADOW-TERTIARY: 225deg 15% 20%;
+  --COLOR-BORDER-PRIMARY: 225deg 20% 85%;
 
   /* FONT-COLOR */
   --COLOR-TEXT-PRIMARY: var(--NEUTRAL-900);
+  --COLOR-TEXT-PRIMARY-ACTIVE: var(--NEUTRAL-0);
+
+  /* BORDERS */
+  --BORDER-CARD-PRIMARY: 1px solid hsl(var(--COLOR-BORDER-PRIMARY) / 0.6);
+
+  /* OUTLINES */
+  --COLOR-OUTLINE-PRIMARY: var(--RED-500);
 
   /* GRADIENTS */
   --GRADIENT-PAGE: linear-gradient(180deg, #ebf2fc 0%, #eef8f9 100%);
@@ -36,4 +50,7 @@
     0px 1px 1.1px hsl(var(--COLOR-SHADOW-PRIMARY) / 0.34),
     0px 1.7px 1.9px -1.2px hsl(var(--COLOR-SHADOW-PRIMARY) / 0.34),
     0px 4px 4.5px -2.5px hsl(var(--COLOR-SHADOW-PRIMARY) / 0.34);
+  --SHADOW-CARD-SECONDARY:
+    inset 0 1px 1px hsl(var(--COLOR-SHADOW-SECONDARY) / 0.12),
+    inset 0 -1px 1px hsl(var(--COLOR-SHADOW-TERTIARY) / 0.4);
 }
