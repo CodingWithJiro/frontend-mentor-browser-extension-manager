@@ -2,25 +2,22 @@ const ExtensionsFilter = ({ filter, setFilter }) => {
   const FILTERS = ["all", "active", "inactive"];
 
   return (
-    <fieldset>
-      <legend className="sr-only">Filter extensions</legend>
-
+    <ul className="flex gap-3.75">
       {FILTERS.map((value) => {
         const capitalizedValue = value[0].toUpperCase() + value.slice(1);
         return (
-          <label key={value}>
-            <input
-              type="radio"
-              name="status"
-              value={value}
-              onChange={() => setFilter(value)}
-              checked={filter === value}
-            />
-            {capitalizedValue}
-          </label>
+          <li key={value}>
+            <button
+              type="button"
+              onClick={() => setFilter(value)}
+              className={`cursor-pointer rounded-full px-[1em] py-[0.425em] font-(family-name:--FF) text-[1.2rem] font-normal focus-visible:outline-2 focus-visible:outline-offset-3 focus-visible:outline-(--COLOR-OUTLINE-PRIMARY) ${filter === value ? "bg-(--COLOR-BG-CARD-SECONDARY-ACTIVE) text-(--COLOR-TEXT-PRIMARY-ACTIVE) hover:bg-(--COLOR-BG-CARD-SECONDARY-ACTIVE-EMPHASIS) focus-visible:bg-(--COLOR-BG-CARD-SECONDARY-ACTIVE-EMPHASIS) " : "border-(--BORDER-CARD-PRIMARY) bg-(--COLOR-BG-CARD-SECONDARY) text-(--COLOR-TEXT-PRIMARY) shadow-(--SHADOW-CARD-SECONDARY) hover:bg-(--COLOR-BG-CARD-SECONDARY-HOVER) focus-visible:bg-(--COLOR-BG-CARD-SECONDARY-HOVER)"}`}
+            >
+              {capitalizedValue}
+            </button>
+          </li>
         );
       })}
-    </fieldset>
+    </ul>
   );
 };
 
