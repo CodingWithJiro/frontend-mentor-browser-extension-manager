@@ -1,5 +1,10 @@
-const ExtensionsFilter = ({ filter, setFilter }) => {
+const ExtensionsFilter = ({ filter, setFilter, filterExtensions }) => {
   const FILTERS = ["all", "active", "inactive"];
+
+  const handleClick = (value) => {
+    setFilter(value);
+    filterExtensions(value);
+  };
 
   return (
     <ul className="flex gap-3.75">
@@ -9,7 +14,7 @@ const ExtensionsFilter = ({ filter, setFilter }) => {
           <li key={value}>
             <button
               type="button"
-              onClick={() => setFilter(value)}
+              onClick={() => handleClick(value)}
               className={`motion-safe:ease-in-out" cursor-pointer rounded-full px-[1em] py-[0.425em] font-(family-name:--FF) text-[1.2rem] font-normal outline-transparent focus-visible:outline-2 focus-visible:outline-offset-3 focus-visible:outline-(--COLOR-OUTLINE-PRIMARY) motion-safe:transition-colors motion-safe:duration-300 ${filter === value ? "bg-(--COLOR-BG-CARD-SECONDARY-ACTIVE) text-(--COLOR-TEXT-PRIMARY-ACTIVE) hover:bg-(--COLOR-BG-CARD-SECONDARY-ACTIVE-EMPHASIS) focus-visible:bg-(--COLOR-BG-CARD-SECONDARY-ACTIVE-EMPHASIS) " : "border-(--BORDER-CARD-PRIMARY) bg-(--COLOR-BG-CARD-SECONDARY) text-(--COLOR-TEXT-PRIMARY) shadow-(--SHADOW-CARD-SECONDARY) hover:bg-(--COLOR-BG-CARD-SECONDARY-HOVER) focus-visible:bg-(--COLOR-BG-CARD-SECONDARY-HOVER)"}`}
             >
               {capitalizedValue}

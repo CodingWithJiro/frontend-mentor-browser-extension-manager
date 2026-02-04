@@ -1,14 +1,12 @@
-import imageUrl from "../assets/logo-devlens_60x60.svg";
-
-const Extension = () => {
+const Extension = ({ logo, name, description }) => {
   return (
     <section>
       <div>
-        <img src={imageUrl} alt="" width="60" height="60" />
+        <img src={logo} alt="" width="60" height="60" />
 
         <div>
-          <h3>DevLens</h3>
-          <p>Quickly inspect page layouts and visualize element boundaries.</p>
+          <h3>{name}</h3>
+          <p>{description}.</p>
         </div>
       </div>
 
