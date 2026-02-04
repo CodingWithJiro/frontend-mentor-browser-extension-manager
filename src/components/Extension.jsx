@@ -8,7 +8,7 @@ const Extension = ({ logo, name, description }) => {
 
         <div>
           <h3>{name}</h3>
-          <p>{description}.</p>
+          <p>{description}</p>
         </div>
       </div>
 
