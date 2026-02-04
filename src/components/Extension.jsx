@@ -1,8 +1,10 @@
+import logos from "../assets/logo.js";
+
 const Extension = ({ logo, name, description }) => {
   return (
     <section>
       <div>
-        <img src={logo} alt="" width="60" height="60" />
+        <img src={logos[logo]} alt="" width="60" height="60" />
 
         <div>
           <h3>{name}</h3>
