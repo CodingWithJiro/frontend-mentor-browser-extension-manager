@@ -1,6 +1,6 @@
 import ExtensionsFilter from "./ExtensionsFilter";
 
-const ExtensionsHeader = ({ filter, setFilter, filterExtensions }) => {
+const ExtensionsHeader = ({ filter, setFilter }) => {
   return (
     <header className="mb-10 flex flex-col items-center gap-4 md:mb-7 md:flex-row md:justify-between">
       <h2
@@ -9,11 +9,7 @@ const ExtensionsHeader = ({ filter, setFilter, filterExtensions }) => {
       >
         Extensions List
       </h2>
-      <ExtensionsFilter
-        filter={filter}
-        setFilter={setFilter}
-        filterExtensions={filterExtensions}
-      />
+      <ExtensionsFilter filter={filter} setFilter={setFilter} />
     </header>
   );
 };

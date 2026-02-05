@@ -7,30 +7,35 @@ const Main = () => {
   const [filter, setFilter] = useState("all");
   const [extensions, setExtensions] = useState(LIST);
 
-  const filterExtensions = (value) => {
-    const filteredExtensions = LIST.filter((extension) => {
-      const { isActive } = extension;
-
-      switch (value) {
-        case "active":
-          return isActive;
-        case "inactive":
-          return !isActive;
-        default:
-          return true;
-      }
-    });
-    setExtensions(filteredExtensions);
+  const getFilteredExtensions = () => {
+    switch (filter) {
+      case "active":
+        return extensions.filter(({ isActive }) => isActive);
+      case "inactive":
+        return extensions.filter(({ isActive }) => !isActive);
+      default:
+        return extensions;
+    }
   };
+  const toggleActive = (targetName) => {
+    const extensionsNew = extensions.map((extension) => {
+      const { name, isActive } = extension;
+      const isTarget = name === targetName;
+
+      return isTarget ? { ...extension, isActive: !isActive } : extension;
+    });
+
+    setExtensions(extensionsNew);
+  };
+  const filteredExtensions = getFilteredExtensions();
 
   return (
     <main id="main">
-      <ExtensionsHeader
-        filter={filter}
-        setFilter={setFilter}
-        filterExtensions={filterExtensions}
+      <ExtensionsHeader filter={filter} setFilter={setFilter} />
+      <ExtensionsGrid
+        toggleActive={toggleActive}
+        extensions={filteredExtensions}
       />
-      <ExtensionsGrid filter={filter} extensions={extensions} />
     </main>
   );
 };
