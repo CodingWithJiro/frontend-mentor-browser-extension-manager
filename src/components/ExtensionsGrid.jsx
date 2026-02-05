@@ -4,7 +4,7 @@ const ExtensionsGrid = ({ extensions }) => {
   return (
     <section
       aria-labelledby="extensions-title"
-      className="grid grid-cols-1 gap-y-3 md:grid-cols-2 lg:grid-cols-3"
+      className="grid grid-cols-1 gap-y-3 md:grid-cols-2 md:gap-x-3 lg:grid-cols-3"
     >
       {extensions.map(({ logo, name, description }) => {
         return (
