@@ -18,7 +18,7 @@ const Extension = ({ logo, name, description }) => {
 
       <div className="flex items-center justify-between">
         <button
-          className="cursor-pointer rounded-full border border-solid border-(--COLOR-BORDER-SECONDARY) bg-(--COLOR-BUTTON-TERTIARY) px-4 py-1.75 text-[0.95rem] font-medium text-(--COLOR-TEXT-PRIMARY) select-none hover:bg-(--COLOR-BUTTON-TERTIARY-HOVER) hover:text-(--COLOR-TEXT-PRIMARY-HOVER) motion-safe:transition-colors motion-safe:duration-300 motion-safe:ease-in-out"
+          className="cursor-pointer rounded-full border border-solid border-(--COLOR-BORDER-SECONDARY) bg-(--COLOR-BUTTON-TERTIARY) px-4 py-1.75 text-[0.95rem] font-medium text-(--COLOR-TEXT-PRIMARY) select-none hover:bg-(--COLOR-BUTTON-TERTIARY-HOVER) hover:text-(--COLOR-TEXT-PRIMARY-HOVER) focus-visible:border-(--COLOR-BORDER-SECONDARY-FOCUS) focus-visible:bg-(--COLOR-BUTTON-TERTIARY-FOCUS) focus-visible:outline-2 focus-visible:outline-offset-3 focus-visible:outline-(--COLOR-OUTLINE-PRIMARY) motion-safe:transition-colors motion-safe:duration-300 motion-safe:ease-in-out"
           type="button"
         >
           Remove
