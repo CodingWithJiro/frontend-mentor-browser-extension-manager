@@ -2,7 +2,7 @@ import ExtensionsFilter from "./ExtensionsFilter";
 
 const ExtensionsHeader = ({ filter, setFilter, filterExtensions }) => {
   return (
-    <header className="mb-10 flex flex-col items-center gap-4 md:flex-row md:justify-between">
+    <header className="mb-10 flex flex-col items-center gap-4 md:mb-7 md:flex-row md:justify-between">
       <h2
         className="text-[2.15rem] font-bold text-(--COLOR-TEXT-PRIMARY) motion-safe:transition-colors motion-safe:duration-300 motion-safe:ease-in-out"
         id="extensions-title"
