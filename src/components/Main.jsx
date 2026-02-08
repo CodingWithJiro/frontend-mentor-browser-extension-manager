@@ -33,7 +33,6 @@ const Main = () => {
     const removedExtensionsNew = [...removedExtensions, removedExtension];
 
     setRemovedExtensions(removedExtensionsNew);
-    console.log(removedExtensions);
   };
   const removeExtension = (targetName) => {
     const extensionsNew = extensions.filter((extension) => {
