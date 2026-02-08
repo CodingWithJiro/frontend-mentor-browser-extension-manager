@@ -27,6 +27,16 @@ const Main = () => {
 
     setExtensions(extensionsNew);
   };
+  const removeExtension = (targetName) => {
+    const extensionsNew = extensions.filter((extension) => {
+      const { name } = extension;
+      const isTarget = name === targetName;
+
+      return !isTarget;
+    });
+
+    setExtensions(extensionsNew);
+  };
   const filteredExtensions = getFilteredExtensions();
 
   return (
@@ -35,6 +45,7 @@ const Main = () => {
       <ExtensionsGrid
         toggleActive={toggleActive}
         extensions={filteredExtensions}
+        removeExtension={removeExtension}
       />
     </main>
   );
