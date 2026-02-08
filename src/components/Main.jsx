@@ -6,6 +6,7 @@ import LIST from "../data/extensions.json";
 const Main = () => {
   const [filter, setFilter] = useState("all");
   const [extensions, setExtensions] = useState(LIST);
+  const [removedExtensions, setRemovedExtensions] = useState([]);
 
   const getFilteredExtensions = () => {
     switch (filter) {
@@ -27,6 +28,13 @@ const Main = () => {
 
     setExtensions(extensionsNew);
   };
+  const saveRemovedExtension = (targetName) => {
+    const removedExtension = extensions.find(({ name }) => targetName === name);
+    const removedExtensionsNew = [...removedExtensions, removedExtension];
+
+    setRemovedExtensions(removedExtensionsNew);
+    console.log(removedExtensions);
+  };
   const removeExtension = (targetName) => {
     const extensionsNew = extensions.filter((extension) => {
       const { name } = extension;
@@ -37,6 +45,7 @@ const Main = () => {
 
     setExtensions(extensionsNew);
   };
+
   const filteredExtensions = getFilteredExtensions();
 
   return (
@@ -45,6 +54,7 @@ const Main = () => {
       <ExtensionsGrid
         toggleActive={toggleActive}
         extensions={filteredExtensions}
+        saveRemovedExtension={saveRemovedExtension}
         removeExtension={removeExtension}
       />
     </main>
