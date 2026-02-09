@@ -12,7 +12,7 @@ const RemoveModal = ({ toRemove, handleRemove, setToRemove }) => {
     } else {
       inputRef.current.close();
     }
-  }, [toRemove]);
+  }, [toRemove, setToRemove]);
 
   return (
     <dialog ref={inputRef}>
