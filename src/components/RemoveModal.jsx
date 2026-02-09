@@ -13,7 +13,6 @@ const RemoveModal = ({ toRemove, handleRemove, setToRemove }) => {
       inputRef.current.close();
     }
   }, [toRemove]);
-  useEffect(() => {});
 
   return (
     <dialog ref={inputRef}>
