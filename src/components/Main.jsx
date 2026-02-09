@@ -2,6 +2,7 @@ import { useState } from "react";
 import ExtensionsHeader from "./ExtensionsHeader";
 import ExtensionsGrid from "./ExtensionsGrid";
 import LIST from "../data/extensions.json";
+import RemoveModal from "./RemoveModal";
 
 const Main = () => {
   const [filter, setFilter] = useState("all");
@@ -59,6 +60,7 @@ const Main = () => {
         extensions={filteredExtensions}
         handleRemove={handleRemove}
       />
+      <RemoveModal />
     </main>
   );
 };
