@@ -1,11 +1,6 @@
 import Extension from "./Extension";
 
-const ExtensionsGrid = ({
-  extensions,
-  toggleActive,
-  removeExtension,
-  saveRemovedExtension,
-}) => {
+const ExtensionsGrid = ({ extensions, toggleActive, handleRemove }) => {
   return (
     <section
       aria-labelledby="extensions-title"
@@ -20,8 +15,7 @@ const ExtensionsGrid = ({
             description={description}
             isActive={isActive}
             toggleActive={toggleActive}
-            saveRemovedExtension={saveRemovedExtension}
-            removeExtension={removeExtension}
+            handleRemove={handleRemove}
           />
         );
       })}

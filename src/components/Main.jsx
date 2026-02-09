@@ -44,6 +44,10 @@ const Main = () => {
 
     setExtensions(extensionsNew);
   };
+  const handleRemove = (targetName) => {
+    saveRemovedExtension(targetName);
+    removeExtension(targetName);
+  };
 
   const filteredExtensions = getFilteredExtensions();
 
@@ -53,8 +57,7 @@ const Main = () => {
       <ExtensionsGrid
         toggleActive={toggleActive}
         extensions={filteredExtensions}
-        saveRemovedExtension={saveRemovedExtension}
-        removeExtension={removeExtension}
+        handleRemove={handleRemove}
       />
     </main>
   );

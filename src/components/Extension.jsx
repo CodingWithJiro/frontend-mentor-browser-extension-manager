@@ -6,14 +6,8 @@ const Extension = ({
   description,
   isActive,
   toggleActive,
-  saveRemovedExtension,
-  removeExtension,
+  handleRemove,
 }) => {
-  const handleRemove = (targetName) => {
-    saveRemovedExtension(targetName);
-    removeExtension(targetName);
-  };
-
   return (
     <section className="flex min-h-50 flex-col justify-between rounded-2xl bg-(--COLOR-BG-CARD-PRIMARY) px-4.5 py-5 font-(family-name:--FF) shadow-(--SHADOW-CARD-SECONDARY) motion-safe:transition-colors motion-safe:duration-300 motion-safe:ease-in-out">
       <div className="flex items-start justify-start gap-4.25">
