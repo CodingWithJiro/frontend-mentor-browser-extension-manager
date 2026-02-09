@@ -8,6 +8,7 @@ const Main = () => {
   const [filter, setFilter] = useState("all");
   const [extensions, setExtensions] = useState(LIST);
   const [removedExtensions, setRemovedExtensions] = useState([]);
+  const [toRemove, setToRemove] = useState(null);
 
   const getFilteredExtensions = () => {
     switch (filter) {
@@ -45,9 +46,10 @@ const Main = () => {
 
     setExtensions(extensionsNew);
   };
-  const handleRemove = (targetName) => {
-    saveRemovedExtension(targetName);
-    removeExtension(targetName);
+  const handleRemove = () => {
+    saveRemovedExtension(toRemove);
+    removeExtension(toRemove);
+    setToRemove(null);
   };
 
   const filteredExtensions = getFilteredExtensions();
@@ -58,9 +60,13 @@ const Main = () => {
       <ExtensionsGrid
         toggleActive={toggleActive}
         extensions={filteredExtensions}
-        handleRemove={handleRemove}
+        setToRemove={setToRemove}
       />
-      <RemoveModal />
+      <RemoveModal
+        handleRemove={handleRemove}
+        toRemove={toRemove}
+        setToRemove={setToRemove}
+      />
     </main>
   );
 };

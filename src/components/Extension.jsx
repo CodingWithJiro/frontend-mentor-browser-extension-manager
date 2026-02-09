@@ -6,7 +6,7 @@ const Extension = ({
   description,
   isActive,
   toggleActive,
-  handleRemove,
+  setToRemove,
 }) => {
   return (
     <section className="flex min-h-50 flex-col justify-between rounded-2xl bg-(--COLOR-BG-CARD-PRIMARY) px-4.5 py-5 font-(family-name:--FF) shadow-(--SHADOW-CARD-SECONDARY) motion-safe:transition-colors motion-safe:duration-300 motion-safe:ease-in-out">
@@ -27,7 +27,7 @@ const Extension = ({
         <button
           className="cursor-pointer rounded-full border border-solid border-(--COLOR-BORDER-SECONDARY) bg-(--COLOR-BUTTON-TERTIARY) px-4 py-1.75 text-[0.95rem] font-medium text-(--COLOR-TEXT-PRIMARY) outline-transparent select-none hover:bg-(--COLOR-BUTTON-TERTIARY-HOVER) hover:not-focus-visible:text-(--COLOR-TEXT-PRIMARY-HOVER) focus-visible:border-(--COLOR-BORDER-SECONDARY-FOCUS) focus-visible:bg-(--COLOR-BUTTON-TERTIARY-FOCUS) focus-visible:outline-2 focus-visible:outline-offset-3 focus-visible:outline-(--COLOR-OUTLINE-PRIMARY) motion-safe:transition-colors motion-safe:duration-300 motion-safe:ease-in-out"
           type="button"
-          onClick={() => handleRemove(name)}
+          onClick={() => setToRemove(name)}
         >
           Remove
         </button>
