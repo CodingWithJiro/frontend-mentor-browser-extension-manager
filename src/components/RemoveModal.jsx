@@ -1,21 +1,20 @@
 import { useRef, useEffect } from "react";
 
 const RemoveModal = ({ toRemove, handleRemove, setToRemove }) => {
-  const inputRef = useRef(null);
+  const dialogRef = useRef(null);
 
   useEffect(() => {
+    if (!dialogRef) return;
+
     if (toRemove !== null) {
-      inputRef.current.showModal();
-      inputRef.current.addEventListener("close", () => setToRemove(null), {
-        once: true,
-      });
+      dialogRef.current.showModal();
     } else {
-      inputRef.current.close();
+      dialogRef.current.close();
     }
-  }, [toRemove, setToRemove]);
+  }, [toRemove]);
 
   return (
-    <dialog ref={inputRef}>
+    <dialog ref={dialogRef} onClose={() => setToRemove(null)}>
       <section>
         <h2>Remove Extension</h2>
 
