@@ -19,11 +19,11 @@ const RemoveModal = ({ toRemove, handleRemove, setToRemove }) => {
       <section>
         <h2>Remove Extension</h2>
 
-        <p>Remove {toRemove} from your extension list?</p>
+        <p>Are you sure you want to remove {toRemove} from your extensions?</p>
 
         <div>
           <button type="button" onClick={handleRemove}>
-            Confirm
+            Remove
           </button>
 
           <button type="button" onClick={() => setToRemove(null)}>
