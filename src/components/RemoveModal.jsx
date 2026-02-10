@@ -4,7 +4,7 @@ const RemoveModal = ({ toRemove, handleRemove, setToRemove }) => {
   const dialogRef = useRef(null);
 
   useEffect(() => {
-    if (!dialogRef) return;
+    if (!dialogRef.current) return;
 
     if (toRemove !== null) {
       dialogRef.current.showModal();
