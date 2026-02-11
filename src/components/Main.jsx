@@ -3,6 +3,7 @@ import ExtensionsHeader from "./ExtensionsHeader";
 import ExtensionsGrid from "./ExtensionsGrid";
 import LIST from "../data/extensions.json";
 import RemoveModal from "./RemoveModal";
+import ToastUndo from "./ToastUndo";
 
 const Main = () => {
   const [filter, setFilter] = useState("all");
@@ -67,6 +68,7 @@ const Main = () => {
         toRemove={toRemove}
         setToRemove={setToRemove}
       />
+      <ToastUndo />
     </main>
   );
 };
