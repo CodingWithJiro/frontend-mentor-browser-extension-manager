@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import ExtensionsHeader from "./ExtensionsHeader";
 import ExtensionsGrid from "./ExtensionsGrid";
 import LIST from "../data/extensions.json";
@@ -10,6 +10,13 @@ const Main = () => {
   const [extensions, setExtensions] = useState(LIST);
   const [removedExtensions, setRemovedExtensions] = useState([]);
   const [toRemove, setToRemove] = useState(null);
+  const [showToast, setShowToast] = useState(false);
+
+  useEffect(() => {
+    if (!showToast) return;
+    const toastTimer = setTimeout(() => setShowToast(false), 3000);
+    return () => clearTimeout(toastTimer);
+  }, [showToast]);
 
   const getFilteredExtensions = () => {
     switch (filter) {
@@ -50,6 +57,7 @@ const Main = () => {
   const handleRemove = () => {
     saveRemovedExtension(toRemove);
     removeExtension(toRemove);
+    setShowToast(true);
     setToRemove(null);
   };
 
@@ -68,7 +76,7 @@ const Main = () => {
         toRemove={toRemove}
         setToRemove={setToRemove}
       />
-      <ToastUndo />
+      <ToastUndo showToast={showToast} />
     </main>
   );
 };
