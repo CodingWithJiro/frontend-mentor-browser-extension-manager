@@ -83,7 +83,11 @@ const Main = () => {
         setToRemove={setToRemove}
       />
       <ToastUndo showToast={showToast} handleUndo={handleUndo} />
-      <RestoreModal showRestore={showRestore} setShowRestore={setShowRestore} />
+      <RestoreModal
+        showRestore={showRestore}
+        setShowRestore={setShowRestore}
+        removedExtensions={removedExtensions}
+      />
     </main>
   );
 };

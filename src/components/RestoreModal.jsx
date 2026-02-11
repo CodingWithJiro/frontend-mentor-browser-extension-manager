@@ -1,6 +1,7 @@
 import { useEffect, useRef } from "react";
+import logos from "../assets/logo.js";
 
-const RestoreModal = ({ showRestore, setShowRestore }) => {
+const RestoreModal = ({ showRestore, setShowRestore, removedExtensions }) => {
   const dialogRef = useRef(null);
 
   useEffect(() => {
@@ -16,7 +17,19 @@ const RestoreModal = ({ showRestore, setShowRestore }) => {
   return (
     <dialog ref={dialogRef} onClose={() => setShowRestore(false)}>
       <h2>Recently Removed</h2>
-      <p>a list of removed extensions</p>
+
+      <ul>
+        {removedExtensions.map(({ logo, name, description }) => {
+          return (
+            <li key={name}>
+              <img src={logos[logo]} alt="" width="60" height="60" />
+              <p>{name}</p>
+              <p>{description}</p>
+              <button type="button">Restore</button>
+            </li>
+          );
+        })}
+      </ul>
       <button type="button" onClick={() => setShowRestore(false)}>
         Close
       </button>
