@@ -19,7 +19,7 @@ const RestoreModal = ({ showRestore, setShowRestore, removedExtensions }) => {
       <h2>Recently Removed</h2>
 
       <ul>
-        {removedExtensions.map(({ logo, name, description }) => {
+        {[...removedExtensions].reverse().map(({ logo, name, description }) => {
           return (
             <li key={name}>
               <img src={logos[logo]} alt="" width="60" height="60" />
