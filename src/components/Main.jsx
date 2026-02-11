@@ -4,6 +4,7 @@ import ExtensionsGrid from "./ExtensionsGrid";
 import LIST from "../data/extensions.json";
 import RemoveModal from "./RemoveModal";
 import ToastUndo from "./ToastUndo";
+import RestoreModal from "./RestoreModal";
 
 const Main = () => {
   const [filter, setFilter] = useState("all");
@@ -11,6 +12,7 @@ const Main = () => {
   const [removedExtensions, setRemovedExtensions] = useState([]);
   const [toRemove, setToRemove] = useState(null);
   const [showToast, setShowToast] = useState(false);
+  const [showRestore, setShowRestore] = useState(false);
 
   useEffect(() => {
     if (!showToast) return;
@@ -76,7 +78,8 @@ const Main = () => {
         toRemove={toRemove}
         setToRemove={setToRemove}
       />
-      <ToastUndo showToast={showToast} />
+      <ToastUndo showToast={showToast} setShowRestore={setShowRestore} />
+      <RestoreModal showRestore={showRestore} setShowRestore={setShowRestore} />
     </main>
   );
 };
