@@ -1,10 +1,10 @@
-const ToastRestore = ({ showToast, handleUndo }) => {
+const ToastRestore = ({ showToast, handleView }) => {
   return (
     showToast && (
       <div className="fixed bottom-6 left-6 flex gap-5 border-2 border-red-500 bg-white">
         <p>Extension removed</p>
 
-        <button type="button" onClick={handleUndo}>
+        <button type="button" onClick={handleView}>
           View
         </button>
       </div>

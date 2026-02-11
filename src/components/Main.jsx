@@ -60,7 +60,7 @@ const Main = () => {
     setShowToast(true);
     setToRemove(null);
   };
-  const handleUndo = () => {
+  const handleView = () => {
     setShowToast(false);
     setShowRestore(true);
   };
@@ -80,7 +80,7 @@ const Main = () => {
         toRemove={toRemove}
         setToRemove={setToRemove}
       />
-      <ToastRestore showToast={showToast} handleUndo={handleUndo} />
+      <ToastRestore showToast={showToast} handleView={handleView} />
       <RestoreModal
         showRestore={showRestore}
         setShowRestore={setShowRestore}
