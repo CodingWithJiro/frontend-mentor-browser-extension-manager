@@ -3,7 +3,7 @@ import ExtensionsHeader from "./ExtensionsHeader";
 import ExtensionsGrid from "./ExtensionsGrid";
 import LIST from "../data/extensions.json";
 import RemoveModal from "./RemoveModal";
-import ToastUndo from "./ToastUndo";
+import ToastRestore from "./ToastRestore";
 import RestoreModal from "./RestoreModal";
 
 const Main = () => {
@@ -80,7 +80,7 @@ const Main = () => {
         toRemove={toRemove}
         setToRemove={setToRemove}
       />
-      <ToastUndo showToast={showToast} handleUndo={handleUndo} />
+      <ToastRestore showToast={showToast} handleUndo={handleUndo} />
       <RestoreModal
         showRestore={showRestore}
         setShowRestore={setShowRestore}
