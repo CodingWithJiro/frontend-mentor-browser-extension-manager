@@ -62,6 +62,10 @@ const Main = () => {
     setShowToast(true);
     setToRemove(null);
   };
+  const handleUndo = () => {
+    setShowToast(false);
+    setShowRestore(true);
+  };
 
   const filteredExtensions = getFilteredExtensions();
 
@@ -78,7 +82,7 @@ const Main = () => {
         toRemove={toRemove}
         setToRemove={setToRemove}
       />
-      <ToastUndo showToast={showToast} setShowRestore={setShowRestore} />
+      <ToastUndo showToast={showToast} handleUndo={handleUndo} />
       <RestoreModal showRestore={showRestore} setShowRestore={setShowRestore} />
     </main>
   );
