@@ -74,13 +74,16 @@ const Main = () => {
     setRemovedExtensions((prev) =>
       prev.filter(({ name }) => name !== targetName)
     );
-    setExtensions((prev) =>
-      [...prev, toRestore].sort(
+    setExtensions((prev) => {
+      const isSameExtension = prev.some(({ name }) => name === targetName);
+      if (isSameExtension) return prev;
+
+      return [...prev, toRestore].sort(
         (a, b) =>
           LIST.findIndex(({ name }) => a.name === name) -
           LIST.findIndex(({ name }) => b.name === name)
-      )
-    );
+      );
+    });
   };
 
   const filteredExtensions = getFilteredExtensions();
