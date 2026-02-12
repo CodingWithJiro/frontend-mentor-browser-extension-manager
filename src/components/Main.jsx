@@ -58,6 +58,7 @@ const Main = () => {
     saveRemovedExtension(toRemove);
     removeExtension(toRemove);
     setToast({
+      name: toRemove,
       message: `${toRemove} removed`,
     });
     setToRemove(null);
@@ -85,6 +86,10 @@ const Main = () => {
       );
     });
   };
+  const handleUndo = (targetName) => {
+    handleRestore(targetName);
+    setToast(null);
+  };
 
   const filteredExtensions = getFilteredExtensions();
 
@@ -101,7 +106,11 @@ const Main = () => {
         toRemove={toRemove}
         setToRemove={setToRemove}
       />
-      <ToastRestore toast={toast} handleView={handleView} />
+      <ToastRestore
+        toast={toast}
+        handleView={handleView}
+        handleUndo={handleUndo}
+      />
       <RestoreModal
         showRestore={showRestore}
         setShowRestore={setShowRestore}
