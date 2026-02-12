@@ -20,8 +20,12 @@ const RestoreModal = ({
   }, [showRestore]);
 
   return (
-    <dialog ref={dialogRef} onClose={() => setShowRestore(false)}>
-      <h2>Recently Removed</h2>
+    <dialog
+      ref={dialogRef}
+      onClose={() => setShowRestore(false)}
+      aria-labelledby="restore-modal-heading"
+    >
+      <h2 id="restore-modal-heading">Recently Removed</h2>
 
       <ul>
         {[...removedExtensions].reverse().map(({ logo, name, description }) => {
@@ -30,7 +34,11 @@ const RestoreModal = ({
               <img src={logos[logo]} alt="" width="60" height="60" />
               <p>{name}</p>
               <p>{description}</p>
-              <button type="button" onClick={() => handleRestore(name)}>
+              <button
+                type="button"
+                onClick={() => handleRestore(name)}
+                aria-label={`Restore ${name}`}
+              >
                 Restore
               </button>
             </li>
