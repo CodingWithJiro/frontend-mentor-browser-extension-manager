@@ -74,7 +74,13 @@ const Main = () => {
     setRemovedExtensions((prev) =>
       prev.filter(({ name }) => name !== targetName)
     );
-    setExtensions((prev) => [...prev, toRestore]);
+    setExtensions((prev) =>
+      [...prev, toRestore].sort(
+        (a, b) =>
+          LIST.findIndex(({ name }) => a.name === name) -
+          LIST.findIndex(({ name }) => b.name === name)
+      )
+    );
   };
 
   const filteredExtensions = getFilteredExtensions();
