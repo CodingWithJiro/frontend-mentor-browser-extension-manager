@@ -1,7 +1,12 @@
 import { useEffect, useRef } from "react";
 import logos from "../assets/logo.js";
 
-const RestoreModal = ({ showRestore, setShowRestore, removedExtensions }) => {
+const RestoreModal = ({
+  showRestore,
+  setShowRestore,
+  removedExtensions,
+  handleRestore,
+}) => {
   const dialogRef = useRef(null);
 
   useEffect(() => {
@@ -25,7 +30,9 @@ const RestoreModal = ({ showRestore, setShowRestore, removedExtensions }) => {
               <img src={logos[logo]} alt="" width="60" height="60" />
               <p>{name}</p>
               <p>{description}</p>
-              <button type="button">Restore</button>
+              <button type="button" onClick={() => handleRestore(name)}>
+                Restore
+              </button>
             </li>
           );
         })}

@@ -66,6 +66,13 @@ const Main = () => {
     setToast(null);
     setShowRestore(true);
   };
+  const handleRestore = (targetName) => {
+    const toRestore = removedExtensions.find(({ name }) => name === targetName);
+    setRemovedExtensions((prev) =>
+      prev.filter(({ name }) => name !== targetName)
+    );
+    setExtensions((prev) => [...prev, toRestore]);
+  };
 
   const filteredExtensions = getFilteredExtensions();
 
@@ -87,6 +94,7 @@ const Main = () => {
         showRestore={showRestore}
         setShowRestore={setShowRestore}
         removedExtensions={removedExtensions}
+        handleRestore={handleRestore}
       />
     </main>
   );
