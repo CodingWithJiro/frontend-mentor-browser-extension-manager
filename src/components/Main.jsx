@@ -68,6 +68,9 @@ const Main = () => {
   };
   const handleRestore = (targetName) => {
     const toRestore = removedExtensions.find(({ name }) => name === targetName);
+
+    if (!toRestore) return;
+
     setRemovedExtensions((prev) =>
       prev.filter(({ name }) => name !== targetName)
     );
