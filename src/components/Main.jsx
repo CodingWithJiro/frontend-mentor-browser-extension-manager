@@ -42,6 +42,7 @@ const Main = () => {
   };
   const saveRemovedExtension = (targetName) => {
     const removedExtension = extensions.find(({ name }) => targetName === name);
+    if (!removedExtension) return;
     setRemovedExtensions((prev) => [...prev, removedExtension]);
   };
   const removeExtension = (targetName) => {
