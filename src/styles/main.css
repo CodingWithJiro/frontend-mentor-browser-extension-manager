@@ -7,4 +7,5 @@
 @import url(./base/global.css) layer(base);
 @import url(./base/motion.css) layer(base);
 
+@import url(./utilities/animation.css) layer(utilities);
 @import url(./utilities/helpers.css) layer(utilities);
