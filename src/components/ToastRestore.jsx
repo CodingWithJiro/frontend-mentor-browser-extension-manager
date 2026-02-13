@@ -1,7 +1,11 @@
-const ToastRestore = ({ toast, handleView, handleUndo }) => {
+const ToastRestore = ({ toast, setToast, handleView, handleUndo }) => {
   return (
     toast && (
-      <div className="fixed bottom-6 left-[50%] flex max-w-120 min-w-70 translate-x-[-50%] flex-col items-center gap-1 rounded-full border-t border-(--COLOR-BORDER-TERTIARY) bg-(--COLOR-BG-CARD-PRIMARY) px-6 py-2.5 font-(family-name:--FF) text-sm shadow-(--SHADOW-CARD-PRIMARY) motion-safe:transition-colors motion-safe:duration-300 motion-safe:ease-in-out md:left-6 md:translate-x-0 md:flex-row md:gap-7">
+      <div
+        className="fade-in-fade-out fixed bottom-6 left-[50%] flex max-w-120 min-w-70 translate-x-[-50%] flex-col items-center gap-1 rounded-full border-t border-(--COLOR-BORDER-TERTIARY) bg-(--COLOR-BG-CARD-PRIMARY) px-6 py-2.5 font-(family-name:--FF) text-sm shadow-(--SHADOW-CARD-PRIMARY) motion-safe:transition-colors motion-safe:duration-300 motion-safe:ease-in-out md:left-6 md:translate-x-0 md:flex-row md:gap-7"
+        onAnimationEnd={() => setToast(null)}
+        key={toast.name}
+      >
         <p className="text-(--COLOR-TEXT-PRIMARY) motion-safe:transition-colors motion-safe:duration-300 motion-safe:ease-in-out">
           {toast.message}
         </p>
