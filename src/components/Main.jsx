@@ -24,6 +24,11 @@ const Main = () => {
         return extensions;
     }
   };
+  const getNoExtensionsMessage = () => {
+    return filter === "all"
+      ? "No installed extensions."
+      : `No ${filter} extensions.`;
+  };
   const toggleActive = (targetName) => {
     const extensionsNew = extensions.map((extension) => {
       const { name, isActive } = extension;
@@ -87,6 +92,7 @@ const Main = () => {
   };
 
   const filteredExtensions = getFilteredExtensions();
+  const emptyMessage = getNoExtensionsMessage();
 
   return (
     <main id="main">
@@ -95,6 +101,7 @@ const Main = () => {
         toggleActive={toggleActive}
         extensions={filteredExtensions}
         setToRemove={setToRemove}
+        emptyMessage={emptyMessage}
       />
       <RemoveModal
         handleRemove={handleRemove}
