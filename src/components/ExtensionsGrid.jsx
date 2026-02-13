@@ -8,7 +8,10 @@ const ExtensionsGrid = ({
 }) => {
   const isEmpty = extensions.length === 0;
   return isEmpty ? (
-    <section className="fade-in mt-10 flex items-center justify-center gap-2.5">
+    <section
+      key={emptyMessage}
+      className="fade-in mt-10 flex items-center justify-center gap-2.5"
+    >
       <svg
         xmlns="http://www.w3.org/2000/svg"
         height="24px"
