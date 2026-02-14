@@ -9,6 +9,9 @@ const RestoreModal = ({
 }) => {
   const dialogRef = useRef(null);
   const isEmpty = removedExtensions.length === 0;
+  const getShortDescription = (description) => {
+    return description.slice(0, 37) + "...";
+  };
 
   useEffect(() => {
     if (!dialogRef.current) return;
