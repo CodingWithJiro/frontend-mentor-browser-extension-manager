@@ -8,6 +8,7 @@ const RestoreModal = ({
   handleRestore,
 }) => {
   const dialogRef = useRef(null);
+  const isEmpty = removedExtensions.length === 0;
 
   useEffect(() => {
     if (!dialogRef.current) return;
@@ -27,6 +28,8 @@ const RestoreModal = ({
     >
       <h2 id="restore-modal-heading">Recently Removed</h2>
 
+      {isEmpty && <p>All extensions restored.</p>}
+
       <ul>
         {[...removedExtensions].reverse().map(({ logo, name, description }) => {
           return (
@@ -45,6 +48,7 @@ const RestoreModal = ({
           );
         })}
       </ul>
+
       <button type="button" onClick={() => setShowRestore(false)}>
         Close
       </button>
