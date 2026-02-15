@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import ExtensionsHeader from "./ExtensionsHeader";
 import ExtensionsGrid from "./ExtensionsGrid";
 import LIST from "../data/extensions.json";
@@ -8,11 +8,27 @@ import RestoreModal from "./RestoreModal";
 
 const Main = () => {
   const [filter, setFilter] = useState("all");
-  const [extensions, setExtensions] = useState(LIST);
-  const [removedExtensions, setRemovedExtensions] = useState([]);
+  const [extensions, setExtensions] = useState(() => {
+    const userExtensions = JSON.parse(localStorage.getItem("userExtensions"));
+    return userExtensions ? userExtensions : LIST;
+  });
+  const [removedExtensions, setRemovedExtensions] = useState(() => {
+    const userRemovedExtensions = JSON.parse(
+      localStorage.getItem("userRemovedExtensions")
+    );
+    return userRemovedExtensions ? userRemovedExtensions : [];
+  });
   const [toRemove, setToRemove] = useState(null);
   const [toast, setToast] = useState(null);
   const [showRestore, setShowRestore] = useState(false);
+
+  useEffect(() => {
+    localStorage.setItem("userExtensions", JSON.stringify(extensions));
+    localStorage.setItem(
+      "userRemovedExtensions",
+      JSON.stringify(removedExtensions)
+    );
+  }, [extensions, removedExtensions]);
 
   const getFilteredExtensions = () => {
     switch (filter) {
