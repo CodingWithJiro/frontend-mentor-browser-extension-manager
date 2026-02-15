@@ -86,6 +86,16 @@ const Main = () => {
       );
     });
   };
+  const handleRestoreAll = () => {
+    setExtensions((prev) => {
+      return [...prev, ...removedExtensions].sort(
+        (a, b) =>
+          LIST.findIndex(({ name }) => a.name === name) -
+          LIST.findIndex(({ name }) => b.name === name)
+      );
+    });
+    setRemovedExtensions([]);
+  };
   const handleUndo = (targetName) => {
     handleRestore(targetName);
     setToast(null);
@@ -119,6 +129,7 @@ const Main = () => {
         setShowRestore={setShowRestore}
         removedExtensions={removedExtensions}
         handleRestore={handleRestore}
+        handleRestoreAll={handleRestoreAll}
       />
     </main>
   );

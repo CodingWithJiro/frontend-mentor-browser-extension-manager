@@ -6,6 +6,7 @@ const RestoreModal = ({
   setShowRestore,
   removedExtensions,
   handleRestore,
+  handleRestoreAll,
 }) => {
   const dialogRef = useRef(null);
   const isEmpty = removedExtensions.length === 0;
@@ -73,13 +74,24 @@ const RestoreModal = ({
         })}
       </ul>
 
-      <button
-        type="button"
-        onClick={() => setShowRestore(false)}
-        className="w-full cursor-pointer rounded-full border border-solid border-(--COLOR-BORDER-SECONDARY) bg-(--COLOR-BUTTON-TERTIARY) px-2.25 py-1 text-[0.95rem] font-medium text-(--COLOR-TEXT-PRIMARY) outline-transparent select-none hover:border-(--COLOR-BORDER-TERTIARY) hover:bg-(--COLOR-BUTTON-TERTIARY-FOCUS) focus-visible:border-(--COLOR-BORDER-SECONDARY-FOCUS) focus-visible:bg-(--COLOR-BUTTON-TERTIARY-FOCUS) focus-visible:outline-2 focus-visible:outline-offset-3 focus-visible:outline-(--COLOR-OUTLINE-PRIMARY) motion-safe:transition-colors motion-safe:duration-300 motion-safe:ease-in-out"
-      >
-        Close
-      </button>
+      <div className="flex gap-2">
+        {!isEmpty && (
+          <button
+            type="button"
+            onClick={handleRestoreAll}
+            className="w-full cursor-pointer rounded-full border border-solid border-(--COLOR-BORDER-SECONDARY) bg-(--COLOR-BUTTON-TERTIARY) px-2.25 py-1 text-[0.95rem] font-medium text-(--COLOR-TEXT-PRIMARY) outline-transparent select-none hover:border-(--COLOR-BORDER-TERTIARY) hover:bg-(--COLOR-BUTTON-TERTIARY-FOCUS) focus-visible:border-(--COLOR-BORDER-SECONDARY-FOCUS) focus-visible:bg-(--COLOR-BUTTON-TERTIARY-FOCUS) focus-visible:outline-2 focus-visible:outline-offset-3 focus-visible:outline-(--COLOR-OUTLINE-PRIMARY) motion-safe:transition-colors motion-safe:duration-300 motion-safe:ease-in-out"
+          >
+            Restore All
+          </button>
+        )}
+        <button
+          type="button"
+          onClick={() => setShowRestore(false)}
+          className="w-full cursor-pointer rounded-full border border-solid border-(--COLOR-BORDER-SECONDARY) bg-(--COLOR-BUTTON-TERTIARY) px-2.25 py-1 text-[0.95rem] font-medium text-(--COLOR-TEXT-PRIMARY) outline-transparent select-none hover:border-(--COLOR-BORDER-TERTIARY) hover:bg-(--COLOR-BUTTON-TERTIARY-FOCUS) focus-visible:border-(--COLOR-BORDER-SECONDARY-FOCUS) focus-visible:bg-(--COLOR-BUTTON-TERTIARY-FOCUS) focus-visible:outline-2 focus-visible:outline-offset-3 focus-visible:outline-(--COLOR-OUTLINE-PRIMARY) motion-safe:transition-colors motion-safe:duration-300 motion-safe:ease-in-out"
+        >
+          Close
+        </button>
+      </div>
     </dialog>
   );
 };
