@@ -112,6 +112,8 @@ const Main = () => {
         extensions={filteredExtensions}
         setToRemove={setToRemove}
         emptyMessage={emptyMessage}
+        filter={filter}
+        handleView={handleView}
       />
       <RemoveModal
         handleRemove={handleRemove}
