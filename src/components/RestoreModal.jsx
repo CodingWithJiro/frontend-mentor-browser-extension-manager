@@ -37,7 +37,11 @@ const RestoreModal = ({
         Recently Removed
       </h2>
 
-      {isEmpty && <p>All extensions restored.</p>}
+      {isEmpty && (
+        <p className="text-center text-[0.90rem] text-(--COLOR-TEXT-SECONDARY)">
+          All extensions restored.
+        </p>
+      )}
 
       <ul className="mb-2.5 flex flex-col gap-2">
         {[...removedExtensions].reverse().map(({ logo, name, description }) => {
