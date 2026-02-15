@@ -1,58 +1,30 @@
-import { useState } from "react";
 import ExtensionsHeader from "./ExtensionsHeader";
 import ExtensionsGrid from "./ExtensionsGrid";
-import LIST from "../data/extensions.json";
 import RemoveModal from "./RemoveModal";
+import ToastRestore from "./ToastRestore";
+import RestoreModal from "./RestoreModal";
+import useMain from "../hooks/useMain";
 
 const Main = () => {
-  const [filter, setFilter] = useState("all");
-  const [extensions, setExtensions] = useState(LIST);
-  const [removedExtensions, setRemovedExtensions] = useState([]);
-  const [toRemove, setToRemove] = useState(null);
-
-  const getFilteredExtensions = () => {
-    switch (filter) {
-      case "active":
-        return extensions.filter(({ isActive }) => isActive);
-      case "inactive":
-        return extensions.filter(({ isActive }) => !isActive);
-      default:
-        return extensions;
-    }
-  };
-  const toggleActive = (targetName) => {
-    const extensionsNew = extensions.map((extension) => {
-      const { name, isActive } = extension;
-      const isTarget = name === targetName;
-
-      return isTarget ? { ...extension, isActive: !isActive } : extension;
-    });
-
-    setExtensions(extensionsNew);
-  };
-  const saveRemovedExtension = (targetName) => {
-    const removedExtension = extensions.find(({ name }) => targetName === name);
-    const removedExtensionsNew = [...removedExtensions, removedExtension];
-
-    setRemovedExtensions(removedExtensionsNew);
-  };
-  const removeExtension = (targetName) => {
-    const extensionsNew = extensions.filter((extension) => {
-      const { name } = extension;
-      const isTarget = name === targetName;
-
-      return !isTarget;
-    });
-
-    setExtensions(extensionsNew);
-  };
-  const handleRemove = () => {
-    saveRemovedExtension(toRemove);
-    removeExtension(toRemove);
-    setToRemove(null);
-  };
-
-  const filteredExtensions = getFilteredExtensions();
+  const {
+    filter,
+    setFilter,
+    toRemove,
+    setToRemove,
+    toast,
+    setToast,
+    showRestore,
+    setShowRestore,
+    removedExtensions,
+    filteredExtensions,
+    emptyMessage,
+    toggleActive,
+    handleRemove,
+    handleView,
+    handleRestore,
+    handleRestoreAll,
+    handleUndo,
+  } = useMain();
 
   return (
     <main id="main">
@@ -61,11 +33,27 @@ const Main = () => {
         toggleActive={toggleActive}
         extensions={filteredExtensions}
         setToRemove={setToRemove}
+        emptyMessage={emptyMessage}
+        filter={filter}
+        handleView={handleView}
       />
       <RemoveModal
         handleRemove={handleRemove}
         toRemove={toRemove}
         setToRemove={setToRemove}
+      />
+      <ToastRestore
+        toast={toast}
+        setToast={setToast}
+        handleView={handleView}
+        handleUndo={handleUndo}
+      />
+      <RestoreModal
+        showRestore={showRestore}
+        setShowRestore={setShowRestore}
+        removedExtensions={removedExtensions}
+        handleRestore={handleRestore}
+        handleRestoreAll={handleRestoreAll}
       />
     </main>
   );

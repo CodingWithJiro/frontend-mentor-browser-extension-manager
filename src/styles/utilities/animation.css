@@ -1,0 +1,37 @@
+@keyframes fade-in-fade-out {
+  0% {
+    transform: translateY(4px);
+    opacity: 0;
+  }
+  10% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  90% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(4px);
+    opacity: 0;
+  }
+}
+
+.fade-in-fade-out {
+  animation: fade-in-fade-out 3s ease-in-out forwards;
+}
+
+@keyframes fade-in {
+  0% {
+    transform: translateY(4px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.fade-in {
+  animation: fade-in 0.3s ease-in-out forwards;
+}
