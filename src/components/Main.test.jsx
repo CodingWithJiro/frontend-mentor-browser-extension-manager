@@ -62,4 +62,30 @@ describe("Filter flow", () => {
     expect(activeToggles.length).toBeGreaterThan(0);
     expect(inactiveToggles.length).toBeGreaterThan(0);
   });
+
+  test("shows empty state when no extensions are active", async () => {
+    const user = userEvent.setup();
+    render(<Main />);
+
+    const activeButton = screen.getByRole("button", { name: /^active$/i });
+    const toggles = screen.getAllByRole("button", {
+      name: /toggle .* active status/i,
+    });
+    const initiallyActive = toggles.filter(
+      (toggle) => toggle.getAttribute("aria-pressed") === "true"
+    );
+    expect(initiallyActive.length).toBeGreaterThan(0);
+
+    for (const toggle of initiallyActive) {
+      await user.click(toggle);
+    }
+    await user.click(activeButton);
+    const noActiveMessage = screen.getByText(/no active extensions/i);
+    expect(noActiveMessage).toBeInTheDocument();
+
+    const activeToggles = screen.queryAllByRole("button", {
+      name: /toggle .* active status/i,
+    }).length;
+    expect(activeToggles).toBe(0);
+  });
 });
