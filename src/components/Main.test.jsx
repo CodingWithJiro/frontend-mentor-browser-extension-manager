@@ -88,4 +88,30 @@ describe("Filter flow", () => {
     }).length;
     expect(activeToggles).toBe(0);
   });
+
+  test("shows empty state when no extensions are inactive", async () => {
+    const user = userEvent.setup();
+    render(<Main />);
+
+    const inactiveButton = screen.getByRole("button", { name: /^inactive$/i });
+    const toggles = screen.getAllByRole("button", {
+      name: /toggle .* active status/i,
+    });
+    const initiallyInactive = toggles.filter(
+      (toggle) => toggle.getAttribute("aria-pressed") === "false"
+    );
+    expect(initiallyInactive.length).toBeGreaterThan(0);
+
+    for (const toggle of initiallyInactive) {
+      await user.click(toggle);
+    }
+    await user.click(inactiveButton);
+    const noInactiveMessage = screen.getByText(/no inactive extensions/i);
+    expect(noInactiveMessage).toBeInTheDocument();
+
+    const inactiveToggles = screen.queryAllByRole("button", {
+      name: /toggle .* active status/i,
+    }).length;
+    expect(inactiveToggles).toBe(0);
+  });
 });
