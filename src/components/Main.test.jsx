@@ -43,4 +43,23 @@ describe("Filter flow", () => {
     const allCount = allToggles.length;
     expect(allCount).toBe(activeCount + inactiveCount);
   });
+
+  test("defaults to all filters on initial render", () => {
+    render(<Main />);
+
+    const allButton = screen.getByRole("button", { name: /^all$/i });
+    expect(allButton).toHaveAttribute("aria-pressed", "true");
+
+    const toggles = screen.getAllByRole("button", {
+      name: /toggle .* active status/i,
+    });
+    const activeToggles = toggles.filter(
+      (toggle) => toggle.getAttribute("aria-pressed") === "true"
+    );
+    const inactiveToggles = toggles.filter(
+      (toggle) => toggle.getAttribute("aria-pressed") === "false"
+    );
+    expect(activeToggles.length).toBeGreaterThan(0);
+    expect(inactiveToggles.length).toBeGreaterThan(0);
+  });
 });
