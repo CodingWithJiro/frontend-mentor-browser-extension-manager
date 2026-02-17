@@ -114,4 +114,30 @@ describe("Filter flow", () => {
     }).length;
     expect(inactiveToggles).toBe(0);
   });
+
+  test("shows empty state when all extensions removed", async () => {
+    const user = userEvent.setup();
+    render(<Main />);
+
+    while (true) {
+      const removeButtons = screen.queryAllByRole("button", {
+        name: /^remove$/i,
+      });
+
+      if (removeButtons.length === 0) break;
+
+      await user.click(removeButtons[0]);
+      const confirmButton = screen.getByRole("button", {
+        name: /remove .* from extensions/i,
+      });
+      await user.click(confirmButton);
+    }
+
+    const noExtensionsMessage = screen.getByText(/no installed extensions/i);
+    expect(noExtensionsMessage).toBeInTheDocument();
+    const viewRemoveButton = screen.getByRole("button", {
+      name: /view removed/i,
+    });
+    expect(viewRemoveButton).toBeInTheDocument();
+  });
 });
