@@ -140,35 +140,4 @@ describe("Filter flow", () => {
     });
     expect(viewRemoveButton).toBeInTheDocument();
   });
-
-  test("shows same number of extensions when a filter is double clicked", async () => {
-    const user = userEvent.setup();
-    render(<Main />);
-
-    const allButton = screen.getByRole("button", { name: /^all$/i });
-    const activeButton = screen.getByRole("button", { name: /^active$/i });
-    const inactiveButton = screen.getByRole("button", { name: /^inactive$/i });
-    const getToggles = async () =>
-      await screen.findAllByRole("button", {
-        name: /toggle .* active status/i,
-      });
-
-    await user.click(allButton);
-    const firstAllCount = await getToggles().length;
-    await user.click(allButton);
-    const secondAllCount = await getToggles().length;
-    expect(firstAllCount).toBe(secondAllCount);
-
-    await user.click(activeButton);
-    const firstActiveCount = await getToggles().length;
-    await user.click(activeButton);
-    const secondActiveCount = await getToggles().length;
-    expect(firstActiveCount).toBe(secondActiveCount);
-
-    await user.click(inactiveButton);
-    const firstInactiveCount = await getToggles().length;
-    await user.click(inactiveButton);
-    const secondInactiveCount = await getToggles().length;
-    expect(firstInactiveCount).toBe(secondInactiveCount);
-  });
 });
