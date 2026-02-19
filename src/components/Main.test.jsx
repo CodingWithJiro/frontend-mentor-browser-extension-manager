@@ -1,6 +1,10 @@
-import { render, screen } from "@testing-library/react";
+import { render, screen, within } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import Main from "./Main";
+
+beforeEach(() => {
+  localStorage.clear();
+});
 
 describe("Filter flow", () => {
   test("applies filters correctly and enforces single selection", async () => {
@@ -139,5 +143,25 @@ describe("Filter flow", () => {
       name: /view removed/i,
     });
     expect(viewRemoveButton).toBeInTheDocument();
+  });
+});
+
+describe("Remove flow", () => {
+  test("shows correct modal behavior when clicking a remove button", async () => {
+    const user = userEvent.setup();
+    render(<Main />);
+    const devLensHeading = screen.getByRole("heading", { name: /devlens/i });
+    const card = devLensHeading.closest("section");
+
+    const removeButton = within(card).getByRole("button", { name: /remove/i });
+    await user.click(removeButton);
+
+    const dialog = screen.getByRole("dialog");
+    expect(dialog).toHaveAttribute("open");
+
+    const confirmButton = screen.getByRole("button", {
+      name: /remove devlens from extensions/i,
+    });
+    expect(confirmButton).toBeInTheDocument();
   });
 });
