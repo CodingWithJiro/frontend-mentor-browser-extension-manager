@@ -156,12 +156,21 @@ describe("Remove flow", () => {
     const removeButton = within(card).getByRole("button", { name: /remove/i });
     await user.click(removeButton);
 
-    const dialog = screen.getByRole("dialog");
+    const dialog = await screen.findByRole("dialog");
     expect(dialog).toHaveAttribute("open");
 
     const confirmButton = screen.getByRole("button", {
       name: /remove devlens from extensions/i,
     });
     expect(confirmButton).toBeInTheDocument();
+
+    const cancelButton = screen.getByRole("button", { name: /cancel/i });
+    await user.click(cancelButton);
+    expect(dialog).not.toHaveAttribute("open");
+    expect(card).toBeInTheDocument();
+
+    await user.click(removeButton);
+    await user.click(confirmButton);
+    expect(card).not.toBeInTheDocument();
   });
 });
