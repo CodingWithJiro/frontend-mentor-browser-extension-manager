@@ -1,6 +1,7 @@
 import { render, screen, within } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import Main from "./Main";
+import { expect } from "vitest";
 
 beforeEach(() => {
   localStorage.clear();
@@ -210,5 +211,46 @@ describe("Remove flow", () => {
       name: /recently removed/i,
     });
     expect(restoreHeading).toBeInTheDocument();
+  });
+});
+
+describe("Restore flow", () => {
+  test("shows correct restore modal behavior", async () => {
+    const user = userEvent.setup();
+    render(<Main />);
+
+    const devLensHeading = screen.getByRole("heading", { name: /devlens/i });
+    const card = devLensHeading.closest("section");
+    const removeButton = within(card).getByRole("button", { name: /remove/i });
+    await user.click(removeButton);
+    const dialog = await screen.findByRole("dialog");
+    expect(dialog).toHaveAttribute("open");
+
+    const confirmButton = screen.getByRole("button", {
+      name: /remove devlens from extensions/i,
+    });
+    await user.click(confirmButton);
+
+    const viewButton = screen.getByRole("button", { name: /^view$/i });
+    expect(viewButton).toBeInTheDocument();
+    await user.click(viewButton);
+
+    const restoreAllButton = screen.getByRole("button", {
+      name: /restore all/i,
+    });
+    expect(restoreAllButton).toBeInTheDocument();
+
+    await user.click(restoreAllButton);
+    const message = screen.getByText(/all extensions restored/i);
+    expect(message).toBeInTheDocument();
+
+    const closeButton = screen.getByRole("button", { name: /close/i });
+    expect(closeButton).toBeInTheDocument();
+
+    await user.click(closeButton);
+    expect(dialog).not.toHaveAttribute("open");
+    expect(
+      screen.getByRole("heading", { name: /devlens/i })
+    ).toBeInTheDocument();
   });
 });
