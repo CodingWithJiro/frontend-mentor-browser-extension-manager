@@ -173,4 +173,42 @@ describe("Remove flow", () => {
     await user.click(confirmButton);
     expect(card).not.toBeInTheDocument();
   });
+
+  test("shows correct toast behavior when clicking the confirm button", async () => {
+    const user = userEvent.setup();
+    render(<Main />);
+
+    const devLensHeading = screen.getByRole("heading", { name: /devlens/i });
+    const card = devLensHeading.closest("section");
+    const removeButton = within(card).getByRole("button", { name: /remove/i });
+    await user.click(removeButton);
+    const confirmButton = screen.getByRole("button", {
+      name: /remove devlens from extensions/i,
+    });
+    await user.click(confirmButton);
+    expect(card).not.toBeInTheDocument();
+
+    const toast = await screen.findByText(/devlens removed/i);
+    expect(toast).toBeInTheDocument();
+
+    const undoButton = screen.getByRole("button", { name: /^undo$/i });
+    expect(undoButton).toBeInTheDocument();
+
+    await user.click(undoButton);
+    expect(
+      screen.getByRole("heading", { name: /devlens/i })
+    ).toBeInTheDocument();
+
+    await user.click(removeButton);
+    await user.click(confirmButton);
+
+    const viewButton = screen.getByRole("button", { name: /^view$/i });
+    expect(viewButton).toBeInTheDocument();
+
+    await user.click(viewButton);
+    const restoreHeading = screen.getByRole("heading", {
+      name: /recently removed/i,
+    });
+    expect(restoreHeading).toBeInTheDocument();
+  });
 });
