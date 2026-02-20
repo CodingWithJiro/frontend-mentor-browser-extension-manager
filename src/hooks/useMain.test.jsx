@@ -32,4 +32,13 @@ describe("useMain", () => {
     const expectedActive = LIST.filter(({ isActive }) => isActive);
     expect(filteredExtensions).toEqual(expectedActive);
   });
+
+  test("updates filteredExtensions correctly when filter is changed to inactive", () => {
+    const { result } = renderHook(() => useMain());
+    const { setFilter } = result.current;
+    act(() => setFilter("inactive"));
+    const { filteredExtensions } = result.current;
+    const expectedInactive = LIST.filter(({ isActive }) => !isActive);
+    expect(filteredExtensions).toEqual(expectedInactive);
+  });
 });
