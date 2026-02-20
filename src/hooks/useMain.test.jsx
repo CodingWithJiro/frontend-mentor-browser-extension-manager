@@ -41,4 +41,21 @@ describe("useMain", () => {
     const expectedInactive = LIST.filter(({ isActive }) => !isActive);
     expect(filteredExtensions).toEqual(expectedInactive);
   });
+
+  test("checks if calling handleRestoreAll still has same order with LIST", () => {
+    const { result } = renderHook(() => useMain());
+
+    act(() => result.current.setToRemove("DevLens"));
+    act(() => result.current.handleRemove());
+    act(() => result.current.setToRemove("TabMaster Pro"));
+    act(() => result.current.handleRemove());
+    act(() => result.current.setToRemove("DOM Snapshot"));
+    act(() => result.current.handleRemove());
+    act(() => result.current.setToRemove("StyleSpy"));
+    act(() => result.current.handleRemove());
+    expect(result.current.filteredExtensions).not.toEqual(LIST);
+
+    act(() => result.current.handleRestoreAll());
+    expect(result.current.filteredExtensions).toEqual(LIST);
+  });
 });
