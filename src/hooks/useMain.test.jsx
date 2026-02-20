@@ -89,4 +89,28 @@ describe("useMain", () => {
     expect(previousIsActive).toBe(finalIsActive);
     expect(result.current.filteredExtensions).toEqual(LIST);
   });
+
+  test("removes extension after calling handleRemove, stores in removedExtensions, sets toast, and resets toRemove", () => {
+    const { result } = renderHook(() => useMain());
+    const hasDevLens = (extensions) =>
+      extensions.some(({ name }) => name === "DevLens");
+
+    const { filteredExtensions: previousExtensions } = result.current;
+    act(() => result.current.setToRemove("DevLens"));
+    act(() => result.current.handleRemove());
+    const { filteredExtensions: currentExtensions } = result.current;
+
+    expect(hasDevLens(previousExtensions)).toBe(true);
+    expect(hasDevLens(currentExtensions)).toBe(false);
+    expect(currentExtensions.length).toBe(previousExtensions.length - 1);
+
+    const { removedExtensions } = result.current;
+    expect(hasDevLens(removedExtensions)).toBe(true);
+    expect(removedExtensions.length).toBe(1);
+
+    const { toast } = result.current;
+    expect(toast.name).toBe("DevLens");
+    expect(toast.message).toBe("DevLens removed");
+    expect(result.current.toRemove).toBe(null);
+  });
 });
