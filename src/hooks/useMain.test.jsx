@@ -113,4 +113,25 @@ describe("useMain", () => {
     expect(toast.message).toBe("DevLens removed");
     expect(result.current.toRemove).toBe(null);
   });
+
+  test("checks if undo restores extension on remove", () => {
+    const { result } = renderHook(() => useMain());
+    const hasDevLens = (extensions) =>
+      extensions.some(({ name }) => name === "DevLens");
+
+    act(() => result.current.setToRemove("DevLens"));
+    act(() => result.current.handleRemove());
+
+    const { filteredExtensions: previousExtensions } = result.current;
+
+    act(() => result.current.handleUndo("DevLens"));
+
+    const { filteredExtensions: currentExtensions } = result.current;
+
+    expect(hasDevLens(previousExtensions)).toBe(false);
+    expect(hasDevLens(currentExtensions)).toBe(true);
+    expect(currentExtensions).toEqual(LIST);
+    expect(result.current.removedExtensions.length).toBe(0);
+    expect(result.current.toast).toBe(null);
+  });
 });
