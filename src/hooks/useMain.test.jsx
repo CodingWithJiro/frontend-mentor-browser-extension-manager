@@ -1,6 +1,7 @@
 import { renderHook } from "@testing-library/react";
 import useMain from "./useMain";
 import LIST from "../data/extensions.json";
+import { act } from "react";
 
 afterEach(() => {
   localStorage.clear();
@@ -21,5 +22,14 @@ describe("useMain", () => {
     const { result } = renderHook(() => useMain());
     const { filteredExtensions } = result.current;
     expect(filteredExtensions).toEqual(LIST);
+  });
+
+  test("updates filteredExtensions correctly when filter is changed to active", () => {
+    const { result } = renderHook(() => useMain());
+    const { setFilter } = result.current;
+    act(() => setFilter("active"));
+    const { filteredExtensions } = result.current;
+    const expectedActive = LIST.filter(({ isActive }) => isActive);
+    expect(filteredExtensions).toEqual(expectedActive);
   });
 });
