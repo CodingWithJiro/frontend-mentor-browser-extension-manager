@@ -58,4 +58,35 @@ describe("useMain", () => {
     act(() => result.current.handleRestoreAll());
     expect(result.current.filteredExtensions).toEqual(LIST);
   });
+
+  test("toggles isActive correctly and untouched extensions remains unchanged", () => {
+    const { result } = renderHook(() => useMain());
+    const getExtensionsOtherThanDevLens = (extensions) =>
+      extensions.filter(({ name }) => name !== "DevLens");
+
+    const { isActive: previousIsActive } =
+      result.current.filteredExtensions.find(({ name }) => name === "DevLens");
+    const previousOtherExtensions = getExtensionsOtherThanDevLens(
+      result.current.filteredExtensions
+    );
+
+    act(() => result.current.toggleActive("DevLens"));
+
+    const { isActive: currentIsActive } =
+      result.current.filteredExtensions.find(({ name }) => name === "DevLens");
+    const currentOtherExtensions = getExtensionsOtherThanDevLens(
+      result.current.filteredExtensions
+    );
+
+    expect(previousIsActive).not.toBe(currentIsActive);
+    expect(previousOtherExtensions).toEqual(currentOtherExtensions);
+
+    act(() => result.current.toggleActive("DevLens"));
+    const { isActive: finalIsActive } = result.current.filteredExtensions.find(
+      ({ name }) => name === "DevLens"
+    );
+
+    expect(previousIsActive).toBe(finalIsActive);
+    expect(result.current.filteredExtensions).toEqual(LIST);
+  });
 });
