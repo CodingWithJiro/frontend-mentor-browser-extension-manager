@@ -230,4 +230,31 @@ describe("useMain", () => {
     expect(result.current.filteredExtensions).toEqual(mockExtensions);
     expect(result.current.removedExtensions).toEqual(mockRemovedExtensions);
   });
+
+  test("updates saved extensions in localStorage when extensions or removedExtensions change", () => {
+    const spy = vi.spyOn(Storage.prototype, "setItem");
+    const { result } = renderHook(() => useMain());
+    spy.mockClear();
+
+    act(() => result.current.toggleActive("DevLens"));
+    expect(spy).toHaveBeenCalledWith(
+      "userExtensions",
+      JSON.stringify(result.current.filteredExtensions)
+    );
+    expect(spy).toHaveBeenCalledWith(
+      "userRemovedExtensions",
+      JSON.stringify(result.current.removedExtensions)
+    );
+
+    act(() => result.current.setToRemove("SpeedBoost"));
+    act(() => result.current.handleRemove());
+    expect(spy).toHaveBeenCalledWith(
+      "userExtensions",
+      JSON.stringify(result.current.filteredExtensions)
+    );
+    expect(spy).toHaveBeenCalledWith(
+      "userRemovedExtensions",
+      JSON.stringify(result.current.removedExtensions)
+    );
+  });
 });
