@@ -34,6 +34,7 @@ const RemoveModal = ({ toRemove, handleRemove, setToRemove }) => {
           <button
             type="button"
             onClick={handleRemove}
+            aria-label={`Remove ${toRemove} from extensions.`}
             className="cursor-pointer rounded-full border-2 border-solid border-(--COLOR-BORDER-SECONDARY-DANGER) bg-(--COLOR-BUTTON-TERTIARY) px-4 py-1.75 text-[0.95rem] font-bold text-(--COLOR-TEXT-PRIMARY-DANGER) outline-transparent select-none hover:bg-(--COLOR-BUTTON-TERTIARY-HOVER) hover:text-(--COLOR-TEXT-PRIMARY-HOVER) focus-visible:bg-(--COLOR-BUTTON-TERTIARY-HOVER) focus-visible:text-(--COLOR-TEXT-PRIMARY-HOVER) focus-visible:outline-2 focus-visible:outline-offset-3 focus-visible:outline-(--COLOR-OUTLINE-PRIMARY) motion-safe:transition-colors motion-safe:duration-300 motion-safe:ease-in-out"
           >
             Remove

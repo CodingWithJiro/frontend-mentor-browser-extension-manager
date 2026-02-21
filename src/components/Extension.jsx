@@ -34,7 +34,8 @@ const Extension = ({
 
         <button
           type="button"
-          aria-label="Toggle extension to active/inactive"
+          aria-label={`Toggle ${name} active status`}
+          aria-pressed={isActive}
           className={`h-5 w-9 cursor-pointer rounded-full p-0.5 outline-transparent select-none focus-visible:outline-2 focus-visible:outline-offset-3 focus-visible:outline-(--COLOR-OUTLINE-PRIMARY) motion-safe:transition-colors motion-safe:duration-300 motion-safe:ease-in-out ${isActive ? "bg-(--COLOR-BUTTON-SECONDARY-ACTIVE) hover:bg-(--COLOR-BUTTON-SECONDARY-HOVER)" : "bg-(--COLOR-BUTTON-SECONDARY)"}`}
           onClick={() => toggleActive(name)}
         >
