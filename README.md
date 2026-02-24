@@ -22,7 +22,7 @@
 ![Dynamic Content](https://img.shields.io/badge/Dynamic%20Content-673ab7?style=for-the-badge)
 [![Google Lighthouse](https://img.shields.io/badge/Lighthouse-00B0FF?style=for-the-badge&logo=lighthouse&logoColor=white)](/docs/downloads/lighthouse-performance-report.pdf)
 
-![Status](https://img.shields.io/badge/status-incomplete-orange)
+![Status](https://img.shields.io/badge/status-complete-brightgreen)
 ![Learning Path](https://img.shields.io/badge/learning%20path-month%2010-blue)
 ![Views](https://visitor-badge.laobi.icu/badge?page_id=CodingWithJiro.frontend-mentor-browser-extension-manager&left_text=repo%20views)
 
