@@ -130,7 +130,15 @@ npm test
 
 ## What I Learned
 
-INSERT LIST OF WHAT I LEARNED MAKING THIS PROJECT
+- Thinking beyond simple CRUD interactions and modeling UI state as a system (removal → confirmation → toast → undo → restore)
+- Designing state in a way that supports future flexibility, not just immediate UI changes
+- Separating business logic from presentation using custom hooks to improve clarity, reusability, and testability
+- Handling real-world persistence using `localStorage` and managing side effects safely with `useEffect`
+- Working with native browser APIs like `<dialog>` and understanding their behavior in both the browser and test environments
+- Writing integration tests that simulate real user behavior instead of testing implementation details
+- Managing deterministic data ordering to avoid unpredictable UI results
+- Using build tool features like `import.meta.glob` to automate asset handling and reduce manual code repetition
+- Recognizing how accessibility decisions (ARIA, semantic elements) influence both UI design and testing strategy
 
 ---
 
