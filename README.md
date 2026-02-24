@@ -55,7 +55,15 @@ You can check out the live website **[here](https://browser-extension-fm-jiro.ne
 
 ## Features
 
-INSERT LIST OF PROJECT FEATURES
+- State-driven filtering (All / Active / Inactive) with ARIA-compliant toggle controls
+- Soft-delete pattern with confirmation modal
+- Undo and restore flows (individual and bulk restore)
+- Persistent state using `localStorage` (extensions + removed items)
+- Deterministic reordering based on original data source
+- System-aware theme switching with `prefers-color-scheme` support
+- Dynamic asset loading using Vite’s `import.meta.glob`
+- Comprehensive testing (hook unit tests + UI integration tests)
+- Accessible dialogs and keyboard-friendly interactions
 
 ---
 
