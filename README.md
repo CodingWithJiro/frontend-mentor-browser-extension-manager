@@ -39,7 +39,9 @@ A fully responsive browser extension manager interface featuring dynamic data re
 
 ## Overview
 
-INSERT PROJECT OVERVIEW (1-2 PARAGRAPHS)
+Browser Extension Manager is a fully responsive, state-driven interface that allows users to manage installed browser extensions through filtering, activation toggling, removal, undo actions, and restoration workflows.
+
+Built with React and custom hooks, the application models soft-deletion, persistent storage, deterministic ordering, and accessible modal interactions. The project emphasizes predictable state management, separation of concerns, and behavior-driven testing.
 
 Created as part of the building challenges from **[Frontend Mentor](https://www.frontendmentor.io/)**.
 
