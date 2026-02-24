@@ -22,7 +22,7 @@
 ![Dynamic Content](https://img.shields.io/badge/Dynamic%20Content-673ab7?style=for-the-badge)
 [![Google Lighthouse](https://img.shields.io/badge/Lighthouse-00B0FF?style=for-the-badge&logo=lighthouse&logoColor=white)](/docs/downloads/lighthouse-performance-report.pdf)
 
-![Status](https://img.shields.io/badge/status-incomplete-orange)
+![Status](https://img.shields.io/badge/status-complete-brightgreen)
 ![Learning Path](https://img.shields.io/badge/learning%20path-month%2010-blue)
 ![Views](https://visitor-badge.laobi.icu/badge?page_id=CodingWithJiro.frontend-mentor-browser-extension-manager&left_text=repo%20views)
 
@@ -39,7 +39,9 @@ A fully responsive browser extension manager interface featuring dynamic data re
 
 ## Overview
 
-INSERT PROJECT OVERVIEW (1-2 PARAGRAPHS)
+Browser Extension Manager is a fully responsive, state-driven interface that allows users to manage installed browser extensions through filtering, activation toggling, removal, undo actions, and restoration workflows.
+
+Built with React and custom hooks, the application models soft-deletion, persistent storage, deterministic ordering, and accessible modal interactions. The project emphasizes predictable state management, separation of concerns, and behavior-driven testing.
 
 Created as part of the building challenges from **[Frontend Mentor](https://www.frontendmentor.io/)**.
 
@@ -47,13 +49,21 @@ Created as part of the building challenges from **[Frontend Mentor](https://www.
 
 ## Live Demo
 
-You can check out the live website **[here](LINK)**
+You can check out the live website **[here](https://browser-extension-fm-jiro.netlify.app/)**
 
 ---
 
 ## Features
 
-INSERT LIST OF PROJECT FEATURES
+- State-driven filtering (All / Active / Inactive) with ARIA-compliant toggle controls
+- Soft-delete pattern with confirmation modal
+- Undo and restore flows (individual and bulk restore)
+- Persistent state using `localStorage` (extensions + removed items)
+- Deterministic reordering based on original data source
+- System-aware theme switching with `prefers-color-scheme` support
+- Dynamic asset loading using Vite’s `import.meta.glob`
+- Comprehensive testing (hook unit tests + UI integration tests)
+- Accessible dialogs and keyboard-friendly interactions
 
 ---
 
@@ -120,7 +130,15 @@ npm test
 
 ## What I Learned
 
-INSERT LIST OF WHAT I LEARNED MAKING THIS PROJECT
+- Thinking beyond simple CRUD interactions and modeling UI state as a system (removal → confirmation → toast → undo → restore)
+- Designing state in a way that supports future flexibility, not just immediate UI changes
+- Separating business logic from presentation using custom hooks to improve clarity, reusability, and testability
+- Handling real-world persistence using `localStorage` and managing side effects safely with `useEffect`
+- Working with native browser APIs like `<dialog>` and understanding their behavior in both the browser and test environments
+- Writing integration tests that simulate real user behavior instead of testing implementation details
+- Managing deterministic data ordering to avoid unpredictable UI results
+- Using build tool features like `import.meta.glob` to automate asset handling and reduce manual code repetition
+- Recognizing how accessibility decisions (ARIA, semantic elements) influence both UI design and testing strategy
 
 ---
 
@@ -128,6 +146,12 @@ INSERT LIST OF WHAT I LEARNED MAKING THIS PROJECT
 
 Created by **Elmar Chavez**
 
-Month/Year: **January - February 2025**
+Month/Year: **January - February 2026**
 
-Journey: **10<sup>th</sup> - 11<sup>th</sup>** month of learning _frontend development_.
+Journey: **10<sup>th</sup> - 11<sup>th</sup>** month of being a _frontend developer_.
+
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/elmar-chavez/)
+[![Gmail](https://img.shields.io/badge/Gmail-D14836?style=for-the-badge&logo=gmail&logoColor=white)](mailto:chavezelmar03@gmail.com)
+[![GitHub](https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/CodingWithJiro)
+[![Frontend Mentor](https://img.shields.io/badge/Frontend%20Mentor-3F54A3?style=for-the-badge&logo=frontendmentor&logoColor=white)](https://www.frontendmentor.io/profile/CodingWithJiro)
+[![daily.dev](https://img.shields.io/badge/daily.dev-171717?style=for-the-badge&logo=daily.dev&logoColor=38BDF8)](https://app.daily.dev/elmarchavez)
